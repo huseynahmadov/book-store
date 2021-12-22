@@ -1,0 +1,64 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+.section-title {
+    font-size: 30px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs input {
+    border-radius: 5px;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px #c2d9e9;
+    margin: 20px;
+}
+
+.inputs label {
+    margin-top: 2% !important;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 1.8%;
+}
+
+.description {
+    height: 8rem !important;
+    font-size: 20px;
+    resize: none;
+    width: 97%;
+    border-radius: 10px;
+    margin-left: 2%;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px #c2d9e9;
+}
+
+.add-btn {
+    border-radius: 5px;
+    margin-left: 1.5%;
+    width: 97%;
+    border: none;
+    outline: none;
+    background-color: #FF8B00;
+    color: #fff;
+    font-size: 25px;
+}
+
+.add-btn:hover {
+    transition: 1s ease all;
+    transform: rotateX(360deg);
+    opacity: 0.9;
+    background-color: #fda500;
+    color: #ff000d;
+}
