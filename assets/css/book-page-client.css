@@ -1,0 +1,121 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E5E5E5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.library {
+    color: #720418;
+    font-weight: 800;
+    border-bottom: 3px solid gray;
+}
+
+.image-container {
+    display: flex;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 500;
+    margin-right: 50px;
+    text-decoration: none;
+    color: #241400;
+}
+
+a:hover {
+    transition: 1s ease all;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.navbar-row {
+    display: flex;
+}
+
+.about {
+    color: #E16A00;
+}
+
+.profile-img {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.back,
+.release-date {
+    background-color: #E16A00;
+    color: #fff;
+    border: none;
+    width: 15%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.back:hover {
+    transition: 1s ease all;
+    opacity: 0.7;
+}
+
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.release-date {
+    background-color: #2F80ED;
+}
+
+.author {
+    font-size: 30px;
+}
+
+.social-row {
+    margin-top: 150px;
+}
+
+.social-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.follow-us {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.social-section {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    margin-top: 100px;
+    background-color: #391F00;
+    padding: 100px;
+}
+
+.footer-first,
+.footer-second,
+.footer-third {
+    color: #fff;
+    font-size: 15px;
+}
+
+.footer-first .popular,
+.footer-second .information,
+.footer-third .help {
+    font-size: 25px;
+}
