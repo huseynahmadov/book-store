@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --mainColorText: #241400;
+  --mainColorHome: #391f00;
+  --mainColorOrange: #e16a00;
+  --fontRoboto: "Roboto", sans-serif;
+  --fontMontserrat: "Montserrat", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+body {
+  font-family: var(--fontMontserrat);
+}
+
+.text-main {
+  color: var(--mainColorText);
+}
+
+.footer-info {
+  background-color: var(--mainColorHome);
+}
+.join-span {
+  font-family: var(--fontRoboto);
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--mainColorText);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}
