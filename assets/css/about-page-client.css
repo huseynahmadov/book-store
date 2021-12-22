@@ -68,6 +68,9 @@ header{
 .A{
     width: 95px;
 }
+body{
+    background-color: #e5e5e5;
+}
 .nav-link{
     transition:0.5s !important;
 

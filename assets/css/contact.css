@@ -9,6 +9,9 @@ header{
 .logo-p1{
     color: #720418;
 }
+body{
+    background-color: #e5e5e5;
+}
 .logo-p1,
 .logo-p11{
     width: 130px;
