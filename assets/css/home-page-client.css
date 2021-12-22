@@ -33,6 +33,24 @@ a {
     color: #241400;
 }
 
+.joinus-btn {
+    border: none;
+    background-color: #E5E5E5;
+}
+
+.join-us-modal {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #E16A00;
+    color: #fff;
+}
+
+.join-us-modal span {
+    margin: auto;
+}
+
 a:hover {
     transition: 1s ease all;
     text-decoration: none;
