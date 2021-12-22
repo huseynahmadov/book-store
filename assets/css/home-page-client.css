@@ -24,6 +24,10 @@ body {
     flex-direction: column;
 }
 
+.navbar {
+    width: 100%;
+}
+
 a {
     display: flex;
     justify-content: flex-end;
