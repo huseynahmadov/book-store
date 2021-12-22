@@ -24,6 +24,10 @@ body {
     flex-direction: column;
 }
 
+.navbar {
+    width: 100%;
+}
+
 a {
     display: flex;
     justify-content: flex-end;
@@ -91,6 +95,7 @@ a:hover {
 .social-col {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .follow-us {
@@ -105,6 +110,7 @@ a:hover {
 }
 
 footer {
+    width: 115%;
     margin-top: 100px;
     background-color: #391F00;
     padding: 100px;
