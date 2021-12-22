@@ -1,0 +1,211 @@
+.logo{
+    margin-left: 155px;
+    margin-top: 36px;
+    display: flex;
+}
+header{
+    display: flex;
+}
+.logo-p1{
+    color: #720418;
+}
+.logo-p1,
+.logo-p11{
+    width: 130px;
+    height: 10px;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 17.07px;
+    font-family: Montserrat;
+    margin-top: 3.39px;
+    
+}
+
+.altxett{
+    border: solid 0.5px gray;
+    background-color: gray;
+    margin-top: -9px;
+    
+}
+.logo-p2{
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 13px;
+    height: 9px;
+    line-height: 25.5px;
+    margin-top: -5px;
+}
+.navbar1{
+    display: flex;
+    margin-left: 324px;
+    width: 374px;
+    height: 24px;
+    margin-top: 42px;
+}
+.navbar-brand{
+    width: 38px;
+}
+.navbar-brand,
+.nav-link{
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 23.54px;
+    height: 24px;
+}
+.nav-link{
+    margin-top: -4px;
+}
+.navbar-nav{
+    margin-top: -5px;
+}
+.A{
+    width: 95px;
+}
+.nav-link{
+    transition:0.5s !important;
+
+}.nav-link:hover{
+    color: #e16a00 !important;
+    font-weight: 900;
+    text-decoration: underline;
+    
+}
+.joinUs{
+    display: flex;
+    margin-top: 44.13px;
+    margin-left: 387px;
+}
+.join-word{
+    margin-left: 8px;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.41px;
+    color: #241400;
+    margin-top: 5.2px;
+}
+.contact{
+    width: 215px;
+    height: 71px;
+    margin-left: 155px;
+    margin-top: 116px;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 70.63px;
+    color: #333;
+}
+.contact-input{
+    width: 48%;
+}
+.contact-inputs{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 95px 0px 155px;
+    justify-content: space-between;
+}
+input{
+    width: 100%;
+    height: 75px;
+    
+}
+.send{
+    width: 48%;
+    height: 75px;
+    line-height: 75px;
+    padding-left: 2px;
+    text-align: center;
+    background-color: #e16a00;
+    color: white;
+    font-weight: 400;
+    font-family: CrimsonPro;
+    font-size: 30px;
+    outline: none;
+}
+.footer{
+    background-color: #391F00;
+    margin-top: 77px;
+    height: 276px;
+    display: flex;
+}
+.logo1{
+    margin-left: 214px;
+    padding-top: 100px;
+    display: flex;
+}
+.logo-p11{
+    color: white;
+}
+.logo-p22{
+    color: white;
+    margin-top: -5px;
+}
+.logo-pic1{
+    padding-top: 8px;
+    margin-right: 5px;
+}
+.div1{
+    display: flex;
+    width: 142px;
+    height: 120px;
+    margin-left: 111px;
+    margin-top: 56px;
+    flex-direction: column;
+}
+.div1-p1{
+    color: white;
+}
+.div2{
+    margin-left: 91px;
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+}
+.div3{
+    margin-left: 91px;
+    margin-top: 56px;
+    display: flex;
+    flex-direction: column;
+}
+.call1{
+    margin-left: 145px;
+    margin-top: 86px;
+    display: flex;
+    flex-direction: column;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 23.54px;
+    width: 125px;
+    color: white;
+}
+.requestcall{
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 27.47px;
+    border: 1px solid #e16a00;
+    color: #e16a00;
+}
+.follow{
+    font-family: Montserrat;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 49.05px;
+    width: 350px;
+    height: 49px;
+    margin: 0 auto;
+    color: #241400;
+    margin-top: 340px;
+}
+.logos-pic{
+    width: 63px;
+    height: 63px;
+}
+.logos{
+    display: flex;
+    width: 400px;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-top: 23px;
+}
