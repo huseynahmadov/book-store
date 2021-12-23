@@ -40,12 +40,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 justify-content-center">
               <li class="nav-item active">
-                <a
-                  class="nav-link font-weight-bolder"
-                  href="index.html"
-                  style="color: var(--mainColorOrange)"
-                  >Home <span class="sr-only">(current)</span></a
-                >
+                <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-dark" href="catalog.html">Catalog</a>
@@ -60,8 +55,13 @@
                   >Contact Us</a
                 >
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="search.html">Search</a>
+              <li class="nav-item font-weight-bolder">
+                <a
+                  class="nav-link text-dark"
+                  href="search.html"
+                  style="color: var(--mainColorOrange) !important"
+                  >Search</a
+                >
               </li>
             </ul>
           </div>
@@ -150,7 +150,10 @@
               class="form-control mt-4"
               placeholder="Book name"
               style="height: 44px"
+              list="title-choices"
+              id="title"
             />
+            <datalist id="title-choices"></datalist>
             <button
               class="btn mt-4 w-100 text-white"
               style="background-color: var(--mainColorOrange)"
@@ -160,7 +163,7 @@
               Search
             </button>
           </div>
-          <!-- If book is noü found display alert message -->
+          <!-- If book is not found display alert message -->
           <div class="col-12 col-sm-12 col-md-7 p-4">
             <div class="alert alert-danger d-none" role="alert">
               The book was not found. Please try again
@@ -172,7 +175,8 @@
                 <img
                   src="./assets/images/search-book.png"
                   alt="book"
-                  class="img-fluid"
+                  class="img-fluid w-100 rounded"
+                  id="book-img"
                 />
               </div>
               <!-- About Book -->
@@ -193,9 +197,13 @@
           </div>
         </div>
       </div>
-
       <!-- Main-container -->
     </main>
+    <div class="container height-vh mt-5 pt-5">
+      <div class="row justify-content-between">
+        <div class="col-12 col-sm-12 col-md-4 p-4" id="books"></div>
+      </div>
+    </div>
 
     <footer class="row m-0">
       <div class="col-md-12">
@@ -319,11 +327,14 @@
       </div>
     </footer>
 
+    <!-- Script -->
+    <script src="./assets/script/search.js" defer></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
       crossorigin="anonymous"
     ></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
