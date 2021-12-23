@@ -28,6 +28,14 @@ a {
 li {
   list-style: none;
 }
+
+.btn {
+  border: none !important;
+}
+
+.btn-lg {
+  border: none !important;
+}
 body {
   font-family: var(--fontMontserrat);
   animation: fadeInAnimation ease 1.3s;
