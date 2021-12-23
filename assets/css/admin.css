@@ -4,6 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat';
+    background-color: #E5E5E5;
 }
 
 .section-title {
@@ -61,4 +62,15 @@ body {
     opacity: 0.9;
     background-color: #fda500;
     color: #ff000d;
+}
+
+.about-store {
+    margin-top: 190px;
+}
+
+.section-title-1 {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 58.86px;
 }
