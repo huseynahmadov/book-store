@@ -1,10 +1,15 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+// import {
+//   getDatabase,
+//   ref,
+//   set,
+//   onValue,
+// } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 import {
-  getDatabase,
-  ref,
-  set,
-  onValue,
+    getDatabase,
+    ref,
+    set,
+    onValue,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -56,5 +61,34 @@ import {
 //     set(ref(database, "/"), kitablar);
 //   });
 // }
-
-// export { start };
+// const starCountRef = ref(db, "/");
+// onValue(starCountRef, (snapshot) => {
+//   const data = snapshot.val();
+//   console.log(data);
+// });
+////////////////////////////////////////////////////////////////////////////////////////
+const firebaseApp = initializeApp({
+    apiKey: "AIzaSyDUUjOIVctqnzMjD5gEGITXsjWu_O2oOvM",
+    authDomain: "bookstore-f7e2c.firebaseapp.com",
+    databaseURL: "https://bookstore-f7e2c-default-rtdb.firebaseio.com",
+    projectId: "bookstore-f7e2c",
+    storageBucket: "bookstore-f7e2c.appspot.com",
+    messagingSenderId: "522070526624",
+    appId: "1:522070526624:web:6306f8fcf17e20ebeed7c5",
+});
+const auth = getAuth(firebaseApp);
+var join = $(".join");
+join.on("click", function(e) {
+    const email = $(".username").val();
+    const password = $(".password").val();
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            console.log("user logged in:", userCredential.user);
+            window.location = "/admin.html";
+        })
+        .catch((error) => {
+            console.log(error.message);
+            //   const errorCode = error.code;
+            const errorMessage = error.message;
+        });
+});

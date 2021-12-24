@@ -1,10 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-// import {
-//   getDatabase,
-//   ref,
-//   set,
-//   onValue,
-// } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+import {
+  getDatabase,
+  ref,
+  set,
+  onValue,
+  push,
+} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
 import {
   getAuth,
   signOut,
@@ -23,6 +26,7 @@ const firebaseApp = initializeApp({
 // ==============
 // Sign in
 // ==============
+let userId = 1;
 
 const validateEmail = (email) => {
   return email.match(
@@ -76,7 +80,6 @@ join.on("click", function (e) {
       }
     });
 });
-///////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////
 // ==============
@@ -93,6 +96,53 @@ $(document).on("click", "#log-out", function () {
       console.log(error.message);
     });
 });
+
+const firebaseConfig = initializeApp({
+  apiKey: "AIzaSyAJ-eqplSjwcTbbHbewQzlUe9Y8otdbYto",
+  authDomain: "book-store-69694.firebaseapp.com",
+  projectId: "book-store-69694",
+  storageBucket: "book-store-69694.appspot.com",
+  messagingSenderId: "434964076450",
+  appId: "1:434964076450:web:40c86964585bb16b8384fb",
+});
+
+// const app = initializeApp(firebaseConfig);
+const db = getDatabase();
+
+$("#send-button").on("click", function () {
+  let name = $("#name").val();
+  let surname = $("#surname").val();
+  let address = $("#address").val();
+  let phone = $("#phone").val();
+
+  var objKey = push(ref(db, "/")).key;
+
+  set(ref(db, "contact-us-infos/" + objKey), {
+    username: name,
+    surname: surname,
+    address,
+    phone,
+  });
+});
+
+const starCountRef = ref(db, "contact-us-infos/");
+onValue(starCountRef, (snapshot) => {
+  const data = snapshot.val();
+
+  for (let result in data) {
+    // let newDatas = $(`<tr>
+    // <th scope="row">${data[result]}</th>
+    // <td>${data[result].username}</td>
+    // <td>${data[result].surname}</td>
+    // <td>${data[result].phone}</td>
+    // </tr>`);
+    var a = data[result];
+    // $("#contact-infos").append(newDatas)
+    console.log(a);
+    console.log(a.username);
+  }
+});
+
 //////////////////////////////////////////////////////////////////////////////////
 // const firebaseConfig = {
 //   apiKey: "AIzaSyDUUjOIVctqnzMjD5gEGITXsjWu_O2oOvM",
