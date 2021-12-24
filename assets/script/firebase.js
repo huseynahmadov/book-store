@@ -11,14 +11,14 @@ import {
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAJ-eqplSjwcTbbHbewQzlUe9Y8otdbYto",
-  authDomain: "book-store-69694.firebaseapp.com",
-  projectId: "book-store-69694",
-  storageBucket: "book-store-69694.appspot.com",
-  messagingSenderId: "434964076450",
-  appId: "1:434964076450:web:40c86964585bb16b8384fb",
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAJ-eqplSjwcTbbHbewQzlUe9Y8otdbYto",
+//   authDomain: "book-store-69694.firebaseapp.com",
+//   projectId: "book-store-69694",
+//   storageBucket: "book-store-69694.appspot.com",
+//   messagingSenderId: "434964076450",
+//   appId: "1:434964076450:web:40c86964585bb16b8384fb",
+// };
 
 // function start() {
 //   const app = initializeApp(firebaseConfig);

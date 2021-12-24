@@ -35,18 +35,14 @@
               <div class="container login-container">
                 <div>Welcome Admin</div>
                 <div class="inputs">
-                  <input
-                    class="username"
-                    type="text "
-                    placeholder="Username "
-                    required
-                  />
+                  <input class="username" type="email" placeholder="Email" />
+                  <p id="email-error-message"></p>
                   <input
                     class="password"
-                    type="password "
-                    placeholder="Password "
-                    required
+                    type="password"
+                    placeholder="Password"
                   />
+                  <small id="password-error-message"></small>
                   <button class="join" type="submit ">Join</button>
                 </div>
               </div>
@@ -55,18 +51,13 @@
         </div>
       </div>
     </section>
-
-    <script>
-      document.querySelector(".join").addEventListener("click", function () {
-        document.querySelector(".login-container").classList.add("d-none");
-        document.querySelector(".myGif").src =
-          "assets/images/Infinity-1s-200px.gif";
-
-        setTimeout(function () {
-          document.querySelector(".myGif").src = "";
-          window.location = "./admin.html";
-        }, 3000);
-      });
-    </script>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Local Js -->
+    <script type="module" src="./assets/script/main.js"></script>
   </body>
 </html>
