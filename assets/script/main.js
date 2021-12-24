@@ -124,7 +124,7 @@ const db = getDatabase();
 $("#send-button").on('click', function() {
     let name = $("#name").val();
     let surname = $("#surname").val();
-    let address = $("#address").val();
+    let email = $("#email").val();
     let phone = $("#phone").val();
 
 
@@ -133,7 +133,7 @@ $("#send-button").on('click', function() {
     set(ref(db, "contact-us-infos/" + objKey), {
         username: name,
         surname: surname,
-        address,
+        email,
         phone,
     });
 
@@ -149,23 +149,30 @@ $("#send-button").on('click', function() {
 
 });
 
-const starCountRef = ref(db, "/");
+const starCountRef = ref(db, "contact-us-infos/");
 onValue(starCountRef, (snapshot) => {
     const data = snapshot.val();
+    let count = 0;
 
+    $("#contact-infos").empty();
 
     for (let result in data) {
+        count++;
 
-        let infos = data[result];
-        // let newDatas = $(`<tr>
-        // <th scope="row">${data[result]}</th>
-        // <td>${data[result].username}</td>
-        // <td>${data[result].surname}</td>
-        // <td>${data[result].phone}</td>
-        // </tr>`);
+        var users = data[result];
 
-        // $("#contact-infos").append(newDatas)
-        console.log(infos[result])
+
+        var newDatas = $(`<tr>
+            <th scope="row">${count}</th>
+            <td>${users.username}</td>
+            <td>${users.surname}</td>
+            <td>${users.email}</td>
+            <td>${users.phone}</td>
+            </tr>`);
+
+        $("#contact-infos").append(newDatas)
+
+
     }
 });
 
