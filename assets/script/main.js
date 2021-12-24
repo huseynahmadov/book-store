@@ -24,7 +24,7 @@ const firebaseApp = initializeApp({
 });
 
 // ==============
-// Sign in
+// SIGN IN ADMIN PANEL
 // ==============
 let userId = 1;
 
@@ -81,9 +81,8 @@ join.on("click", function (e) {
     });
 });
 
-////////////////////////////////////////////////////////////
 // ==============
-// Sign out
+// SIGN OUT ADMIN PANEL
 // ==============
 $(document).on("click", "#log-out", function () {
   console.log("asd");
@@ -112,7 +111,7 @@ const db = getDatabase();
 $("#send-button").on("click", function () {
   let name = $("#name").val();
   let surname = $("#surname").val();
-  let address = $("#address").val();
+  let email = $("#email").val();
   let phone = $("#phone").val();
 
   var objKey = push(ref(db, "/")).key;
@@ -120,29 +119,95 @@ $("#send-button").on("click", function () {
   set(ref(db, "contact-us-infos/" + objKey), {
     username: name,
     surname: surname,
-    address,
+    email,
     phone,
   });
 });
 
+/* 
+
+
+        WRITE CONTACT TO ADMIN PANEL
+
+
+*/
+
+// ==============
+// WRITE CONTACT INFOS FROM FIREBASE TO ADMIN PANEL
+// ==============
+
 const starCountRef = ref(db, "contact-us-infos/");
-onValue(starCountRef, (snapshot) => 
+onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();
+  let count = 0;
+
+  $("#contact-infos").empty();
 
   for (let result in data) {
-    // let newDatas = $(`<tr>
-    // <th scope="row">${data[result]}</th>
-    // <td>${data[result].username}</td>
-    // <td>${data[result].surname}</td>
-    // <td>${data[result].phone}</td>
-    // </tr>`);
-    var a = data[result];
-    // $("#contact-infos").append(newDatas)
-    console.log(a);
-    console.log(a.username);
+    count++;
+
+    var users = data[result];
+
+    var newDatas = $(`<tr>
+            <th scope="row">${count}</th>
+            <td>${users.username}</td>
+            <td>${users.surname}</td>
+            <td>${users.email}</td>
+            <td>${users.phone}</td>
+            </tr>`);
+
+    $("#contact-infos").append(newDatas);
   }
 });
 
+// ==============
+// WRITE JOIN US INFOS FROM FIREBASE TO ADMIN PANEL
+// ==============
+
+$("#join-us").on("click", function () {
+  let name = $("#modal-firstname").val();
+  let surname = $("#modal-surname").val();
+  let email = $("#modal-email").val();
+
+  var objKey = push(ref(db, "/")).key;
+  console.log(objKey);
+  set(ref(db, "join-us-infos/" + objKey), {
+    username: name,
+    surname,
+    email,
+  });
+});
+
+const usersInfos = ref(db, "join-us-infos/");
+onValue(usersInfos, (snapshot) => {
+  const data = snapshot.val();
+  let count = 0;
+
+  $("#join-us-infos").empty();
+
+  for (let result in data) {
+    count++;
+
+    var users = data[result];
+
+    var newDatas = $(`<tr>
+            <th scope="row">${count}</th>
+            <td>${users.username}</td>
+            <td>${users.surname}</td>
+            <td>${users.email}</td>
+            </tr>`);
+
+    $("#join-us-infos").append(newDatas);
+  }
+});
+/* 
+
+
+        BOOK FORM
+        ADD NEW BOOK
+
+
+*/
 //////////////////////////////////////////////////////////////////////////////////
 // const firebaseConfig = {
 //   apiKey: "AIzaSyDUUjOIVctqnzMjD5gEGITXsjWu_O2oOvM",
