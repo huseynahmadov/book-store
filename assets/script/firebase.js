@@ -1,10 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import {
-  getDatabase,
-  ref,
-  set,
-  onValue,
+    getDatabase,
+    ref,
+    set,
+    onValue,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -12,12 +12,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAJ-eqplSjwcTbbHbewQzlUe9Y8otdbYto",
-  authDomain: "book-store-69694.firebaseapp.com",
-  projectId: "book-store-69694",
-  storageBucket: "book-store-69694.appspot.com",
-  messagingSenderId: "434964076450",
-  appId: "1:434964076450:web:40c86964585bb16b8384fb",
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId
 };
 
 // function start() {
