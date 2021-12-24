@@ -170,7 +170,6 @@ $("#join-us").on("click", function () {
   let email = $("#modal-email").val();
 
   var objKey = push(ref(db, "/")).key;
-  console.log(objKey);
   set(ref(db, "join-us-infos/" + objKey), {
     username: name,
     surname,
@@ -200,41 +199,55 @@ onValue(usersInfos, (snapshot) => {
     $("#join-us-infos").append(newDatas);
   }
 });
+
 /* 
 
 
         BOOK FORM
-        ADD NEW BOOK
 
 
 */
 
-//////////////////////////////////////////////////////////////////////////////////
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDUUjOIVctqnzMjD5gEGITXsjWu_O2oOvM",
-//   authDomain: "bookstore-f7e2c.firebaseapp.com",
-//   databaseURL: "https://bookstore-f7e2c-default-rtdb.firebaseio.com",
-//   projectId: "bookstore-f7e2c",
-//   storageBucket: "bookstore-f7e2c.appspot.com",
-//   messagingSenderId: "522070526624",
-//   appId: "1:522070526624:web:6306f8fcf17e20ebeed7c5",
-// };
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const db = getDatabase(app);
-// writeUserData("001", "Elnur", "Hasanov");
-// writeUserData("002", "Teymur", "Hasanov");
+// ==============
+// ADD NEW BOOK
+// ==============
+$("#bf-add-btn").on("click", function (e) {
+  let bookName = $("#bf-book-name").val();
+  let authorName = $("#bf-author-name").val();
+  let imageUrl = $("#bf-image-url").val();
+  let description = $("#bf-description").val();
+  let bookType = $("#bf-book-type").val();
 
-// function writeUserData(userId, name, surname) {
-//   set(ref(db, "users/" + userId), {
-//     username: name,
-//     usersurname: surname,
-//   });
-// }
+  var objKey = push(ref(db, "/")).key;
+  set(ref(db, "newBooks/" + objKey), {
+    bookName,
+    authorName,
+    imageUrl,
+    description,
+    bookType,
+  });
+});
 
-// const starCountRef = ref(db, "/");
-// onValue(starCountRef, (snapshot) => {
-//   const data = snapshot.val();
-//   console.log(data);
-// });
-////////////////////////////////////////////////////////////////////////////////////////
+/* 
+
+
+        ABOUT STORE
+
+
+*/
+
+// ==============
+// ADD NEW BOOK
+// ==============
+$("#about-btn").on("click", function (e) {
+  let titleName = $("#about-name").val();
+  let imageUrl = $("#about-img-url").val();
+  let description = $("#about-description").val();
+
+  var objKey = push(ref(db, "/")).key;
+  set(ref(db, "aboutStore/" + objKey), {
+    titleName,
+    imageUrl,
+    description,
+  });
+});
