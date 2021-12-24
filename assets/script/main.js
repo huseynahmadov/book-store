@@ -217,7 +217,7 @@ $("#bf-add-btn").on("click", function(e) {
     let imageUrl = $("#bf-image-url").val();
     let description = $("#bf-description").val();
     let bookType = $("#bf-book-type").val();
-
+    $("#book-form").find(":input").val("");
     var objKey = push(ref(db, "/")).key;
     set(ref(db, "newBooks/" + objKey), {
         bookName,
@@ -243,7 +243,7 @@ $("#about-btn").on("click", function(e) {
     let titleName = $("#about-name").val();
     let imageUrl = $("#about-img-url").val();
     let description = $("#about-description").val();
-
+    $("#about-store").find(":input").val("");
     var objKey = push(ref(db, "/")).key;
     set(ref(db, "aboutStore/" + objKey), {
         titleName,
