@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 :root {
   --mainColorText: #241400;
   --mainColorHome: #391f00;
@@ -19,8 +28,20 @@ a {
 li {
   list-style: none;
 }
+
+.btn {
+  border: none !important;
+}
+
+.btn-lg {
+  border: none !important;
+}
+
 body {
   font-family: var(--fontMontserrat);
+  animation: fadeInAnimation ease 1.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .text-main {
@@ -48,9 +69,58 @@ body {
   background: var(--mainColorText);
   border-radius: 10px;
 }
+.join-div {
+  padding: 0px;
+}
+.join-div button {
+  padding: 0px;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+}
+.join-div span {
+  font-size: 18px;
+}
+.join-div img {
+  width: 18px;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.icon {
+  width: 20%;
+  cursor: pointer;
+}
+.icon img {
+  width: 75%;
+}
+
+/* Only Catalog, About store and Contact Us sections*/
 
 @media screen and (max-width: 992px) {
   .navbar-toggler {
     margin-left: auto;
+  }
+  .join-div,
+  .join-div span,
+  .join-div button {
+    padding: 0 !important;
+    margin: 3.2px 0 !important;
+    font-family: var(--fontMontserrat);
+  }
+  .join-div img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .icons {
+    justify-content: space-between;
+  }
+  .icon {
+    width: 30%;
   }
 }
