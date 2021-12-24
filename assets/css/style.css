@@ -36,6 +36,7 @@ li {
 .btn-lg {
   border: none !important;
 }
+
 body {
   font-family: var(--fontMontserrat);
   animation: fadeInAnimation ease 1.3s;
@@ -68,6 +69,21 @@ body {
   background: var(--mainColorText);
   border-radius: 10px;
 }
+.join-div {
+  padding: 0px;
+}
+.join-div button {
+  padding: 0px;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+}
+.join-div span {
+  font-size: 18px;
+}
+.join-div img {
+  width: 18px;
+}
 
 .icons {
   display: flex;
@@ -82,9 +98,21 @@ body {
   width: 75%;
 }
 
+/* Only Catalog, About store and Contact Us sections*/
+
 @media screen and (max-width: 992px) {
   .navbar-toggler {
     margin-left: auto;
+  }
+  .join-div,
+  .join-div span,
+  .join-div button {
+    padding: 0 !important;
+    margin: 3.2px 0 !important;
+    font-family: var(--fontMontserrat);
+  }
+  .join-div img {
+    display: none;
   }
 }
 
