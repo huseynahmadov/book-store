@@ -1,60 +1,62 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+// import {
+//   getDatabase,
+//   ref,
+//   set,
+//   onValue,
+// } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 import {
-    getDatabase,
-    ref,
-    set,
-    onValue,
-} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: process.env.apiKey,
-    authDomain: process.env.authDomain,
-    projectId: process.env.projectId,
-    storageBucket: process.env.storageBucket,
-    messagingSenderId: process.env.messagingSenderId,
-    appId: process.env.appId
-};
-
-// function start() {
-//   const app = initializeApp(firebaseConfig);
-
-//   var database = getDatabase(app);
-
-//   var kitablar = [];
-
-//   onValue(ref(database, "/"), (snapshot) => {
-//     var data = snapshot.val();
-
-//     console.log("Kitab melumatlari:", data);
-
-//     if (data !== null) {
-//       kitablar = data;
-//     }
-
-//     var kitablarUL = document.querySelector("#kitablar");
-//     kitablarUL.innerHTML = "";
-
-//     kitablar.forEach((kitab) => {
-//       var li = document.createElement("li");
-//       li.innerHTML = kitab.title;
-//       kitablarUL.append(li);
-//     });
-//   });
-
-//   document.querySelector("#add").addEventListener("click", function (e) {
-//     var bookTitle = document.querySelector("#title").value;
-
-//     kitablar.push({
-//       title: bookTitle,
-//     });
-
-//     set(ref(database, "/"), kitablar);
+    getAuth,
+    signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDUUjOIVctqnzMjD5gEGITXsjWu_O2oOvM",
+//   authDomain: "bookstore-f7e2c.firebaseapp.com",
+//   databaseURL: "https://bookstore-f7e2c-default-rtdb.firebaseio.com",
+//   projectId: "bookstore-f7e2c",
+//   storageBucket: "bookstore-f7e2c.appspot.com",
+//   messagingSenderId: "522070526624",
+//   appId: "1:522070526624:web:6306f8fcf17e20ebeed7c5",
+// };
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const db = getDatabase(app);
+// writeUserData("001", "Elnur", "Hasanov");
+// writeUserData("002", "Teymur", "Hasanov");
+// function writeUserData(userId, name, surname) {
+//   set(ref(db, "users/" + userId), {
+//     username: name,
+//     usersurname: surname,
 //   });
 // }
-
-// export { start };
+// const starCountRef = ref(db, "/");
+// onValue(starCountRef, (snapshot) => {
+//   const data = snapshot.val();
+//   console.log(data);
+// });
+////////////////////////////////////////////////////////////////////////////////////////
+const firebaseApp = initializeApp({
+    apiKey: "AIzaSyDUUjOIVctqnzMjD5gEGITXsjWu_O2oOvM",
+    authDomain: "bookstore-f7e2c.firebaseapp.com",
+    databaseURL: "https://bookstore-f7e2c-default-rtdb.firebaseio.com",
+    projectId: "bookstore-f7e2c",
+    storageBucket: "bookstore-f7e2c.appspot.com",
+    messagingSenderId: "522070526624",
+    appId: "1:522070526624:web:6306f8fcf17e20ebeed7c5",
+});
+const auth = getAuth(firebaseApp);
+var join = $(".join");
+join.on("click", function(e) {
+    const email = $(".username").val();
+    const password = $(".password").val();
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            console.log("user logged in:", userCredential.user);
+            window.location = "/admin.html";
+        })
+        .catch((error) => {
+            console.log(error.message);
+            //   const errorCode = error.code;
+            const errorMessage = error.message;
+        });
+});
