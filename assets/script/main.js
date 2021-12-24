@@ -108,12 +108,14 @@ $(document).on("click", "#log-out", function () {
 // const db = getDatabase(app);
 // writeUserData("001", "Elnur", "Hasanov");
 // writeUserData("002", "Teymur", "Hasanov");
+
 // function writeUserData(userId, name, surname) {
 //   set(ref(db, "users/" + userId), {
 //     username: name,
 //     usersurname: surname,
 //   });
 // }
+
 // const starCountRef = ref(db, "/");
 // onValue(starCountRef, (snapshot) => {
 //   const data = snapshot.val();
