@@ -126,7 +126,7 @@ $("#send-button").on("click", function () {
 });
 
 const starCountRef = ref(db, "contact-us-infos/");
-onValue(starCountRef, (snapshot) => {
+onValue(starCountRef, (snapshot) => 
   const data = snapshot.val();
 
   for (let result in data) {
