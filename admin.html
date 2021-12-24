@@ -33,9 +33,9 @@
             <img src="./assets/images/icon.png" alt="" />
             <a href="#contact-us-section">Contact</a>
         </div>
-        <div class="sideIcon">
+        <div class="sideIcon" class="log-out-class">
             <img src="./assets/images/icon.png" alt="" />
-            <a href="./admin-login.html">Log out</a>
+            <a id="log-out" href="#">Log out</a>
         </div>
     </div>
 
@@ -133,35 +133,23 @@
                         <th scope="col">Handle</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
+                <tbody id="contact-infos">
+
+                    <!-- <tr>
                         <th scope="row">2</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
                         <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    </tr> -->
+
                 </tbody>
             </table>
         </div>
     </section>
-
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-
-
-
+    <!-- Local Js -->
+    <script type="module" src="./assets/script/main.js"></script>
     <script>
         function openNav() {
             document.getElementById("mySidebar").style.width = "250px";
