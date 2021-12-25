@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+console.log("sdklskd")
 
 import {
     getDatabase,
@@ -280,11 +281,11 @@ function booksLoad() {
             </div>
         </div>`);
             $('.items').append(newBook)
-           
-            
+
+
 
         }
-        $('.asas').html('<script src="./assets/script/slider.js " defer></script>')
+        $('.asass').html('<script src="./assets/script/slider.js " defer></script>')
     });
 }
 console.log('salam')
