@@ -257,9 +257,10 @@ $("#about-btn").on("click", function(e) {
     CATALOG SECTION
 */
 window.onload = booksLoad;
-console.log("sdklskd")
+console.log("dklsdk")
 
 function booksLoad() {
+
     const booksInfo = ref(db, "newBooks/");
     onValue(booksInfo, (snapshot) => {
         const data = snapshot.val();
@@ -277,8 +278,8 @@ function booksLoad() {
                     <p class="card-text text-center ">Harry potter</p>
                     <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
                 </div>
-            </div>
-        </div>`);
+                  </div>
+                     </div>`);
             $(".best-seller").append(newBook)
 
         }
