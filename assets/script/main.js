@@ -289,8 +289,12 @@ $('.asass').html('<script src="./assets/script/slider.js " defer></script>')
 }
 
 $('.fantastic').on('click',function(){
-     $('.asass').empty();
+     
+     $(".fantastic").off('click');
+     $("#adventures").on('click');
      $('.items').css("display","none");
+     $('#adventure').css("display","none")
+     $('.fantastics').css("display","block")
     const booksInfo = ref(db, "newBooks/");
     onValue(booksInfo, (snapshot) => {
         const data = snapshot.val();
@@ -314,11 +318,46 @@ $('.fantastic').on('click',function(){
         
          $('.fantastics').append(newBook)  
            }  
+           
     }
 
-   $('.asass').html('<script src="./assets/script/slider.js " defer></script>')
+   $('.asass').html('<script src="./assets/script/slider2.js " defer></script>')
     });
 
+})
+$("#adventures").on('click', function() {
+    $("#adventures").off('click');
+    $(".fantastic").on('click');
+    $(".fantastics").css("display", "none");
+    $('.items').css("display", "none");
+    $('#adventure').css("display","block")
+
+    const booksInfo = ref(db, "newBooks/");
+    onValue(booksInfo, (snapshot) => {
+        const data = snapshot.val();
+
+
+        for (let result in data) {
+            var books = data[result];
+            if (books.bookType === 'Adventure') {
+
+
+                let newBook = $(`<div>
+            <div class="card " style="width: 15rem; ">
+                <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
+                <div class="card-body ">
+                    <h5 class="card-title text-center " style="height:60px">${books.bookName}</h5>
+                    <p class="card-text text-center " style="height:80px">${books.authorName}</p>
+                    <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
+                </div>
+            </div>
+        </div>`);
+
+                $('#adventure').append(newBook)
+            }
+        }
+        $('.asass').html('<script src="./assets/script/slider3.js " defer></script>')
+    });
 })
 
 

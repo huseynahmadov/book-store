@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-    $('.items').slick({
+    
+    $('.fantastics').slick({
         infinite: true,
         slidesToShow: 3,
         lazyLoad: 'ondemand',
@@ -9,8 +10,6 @@ $(document).ready(function() {
         autoplaySpeed: 3000,
         arrows: true
     });
-   
 
 
 });
-console.log('salammgisfdsfsf')
