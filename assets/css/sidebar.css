@@ -1,80 +1,82 @@
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 .sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #720418;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #720418;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
+
 .sideIcon {
-  display: flex;
-  align-items: center;
-  margin-left: 7%;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 7%;
+    cursor: pointer;
 }
 
 .sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #fff;
-  display: block;
-  transition: 0.3s;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
 }
 
 .sidebar a:hover {
-  color: black;
+    color: black;
 }
+
 .sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
 .openbtn {
-  font-size: 20px;
-  background-color: #720418;
-  color: white;
-  padding: 10px 15px;
-
-  margin-left: auto;
-  position: fixed;
-  top: 5%;
-  right: 3%;
+    font-size: 20px;
+    background-color: #720418;
+    color: white;
+    padding: 10px 15px;
+    margin-left: auto;
+    position: fixed;
+    top: 5%;
+    right: 3%;
 }
 
 .openbtn:hover {
-  transition: 2s ease all;
-  background-color: #444;
+    transition: 1s ease all;
+    transform: rotateZ(180deg);
+    background-color: #444;
 }
 
 #main {
-  transition: margin-right 0.5s;
-  padding: 16px;
+    transition: margin-right 0.5s;
+    padding: 16px;
 }
 
 .visibilityHidden {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 @media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-  .sidebar a {
-    font-size: 18px;
-  }
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 18px;
+    }
 }

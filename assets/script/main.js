@@ -26,7 +26,6 @@ const firebaseApp = initializeApp({
 // ==============
 // SIGN IN ADMIN PANEL
 // ==============
-let userId = 1;
 
 const validateEmail = (email) => {
     return email.match(
@@ -43,7 +42,7 @@ join.on("click", function(e) {
     var MinLength = 6;
     var MaxLength = 15;
     if (password.length < MinLength || password.length > MaxLength) {
-        $("#password-error-message").text("Şifrə 6-12 aralığı olmadır");
+        $("#password-error-message").text("Şifrə 6-15 aralığı olmadır");
         $("#password-error-message").css({
             color: "red",
         });
@@ -85,7 +84,6 @@ join.on("click", function(e) {
 // SIGN OUT ADMIN PANEL
 // ==============
 $(document).on("click", "#log-out", function() {
-    console.log("asd");
     signOut(auth)
         .then((userCredential) => {
             window.location = "./admin-login.html";
@@ -170,6 +168,7 @@ $("#join-us").on("click", function() {
     let email = $("#modal-email").val();
 
     var objKey = push(ref(db, "/")).key;
+
     set(ref(db, "join-us-infos/" + objKey), {
         username: name,
         surname,
@@ -217,6 +216,7 @@ $("#bf-add-btn").on("click", function(e) {
     let imageUrl = $("#bf-image-url").val();
     let description = $("#bf-description").val();
     let bookType = $("#bf-book-type").val();
+
     $("#book-form").find(":input").val("");
     var objKey = push(ref(db, "/")).key;
     set(ref(db, "newBooks/" + objKey), {
@@ -251,3 +251,36 @@ $("#about-btn").on("click", function(e) {
         description,
     });
 });
+
+/*
+
+    CATALOG SECTION
+*/
+window.onload = booksLoad;
+
+function booksLoad() {
+    console.log("kfdldkf")
+    const booksInfo = ref(db, "newBooks/");
+    onValue(booksInfo, (snapshot) => {
+        const data = snapshot.val();
+
+
+        for (let result in data) {
+
+            let books = data[result];
+
+            let newBook = $(`<div>
+            <div class="card " style="width: 15rem; ">
+                <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
+                <div class="card-body ">
+                    <h5 class="card-title text-center ">${books.bookName}</h5>
+                    <p class="card-text text-center ">Harry potter</p>
+                    <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
+                </div>
+            </div>
+        </div>`);
+            $(".best-seller").append(newBook)
+
+        }
+    });
+}
