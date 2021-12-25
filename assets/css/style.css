@@ -43,6 +43,7 @@ body {
     animation: fadeInAnimation ease 1.3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .text-main {
@@ -137,4 +138,34 @@ body {
     .icon {
         width: 30%;
     }
+}
+
+.container p {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+/* .types .type-list {
+    display: flex;
+    margin-right: 40%;
+}
+*/
+
+.type-list li {
+    margin-left: 10%;
+}
+
+.type-list li a {
+    text-decoration: none;
+    color: rgb(14, 9, 9);
+}
+
+.card img {
+    width: 100%;
+    height: 20rem;
+}
+
+.card a {
+    background-color: #E16A00;
 }
