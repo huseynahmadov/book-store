@@ -1,0 +1,87 @@
+​ html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  background-color: #e5e5e5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.section-title {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs input {
+  border-radius: 5px;
+  font-size: 20px;
+  height: 30px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #c2d9e9;
+  margin: 20px;
+}
+
+.inputs label {
+  margin-top: 2% !important;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 1.8%;
+}
+
+.description {
+  height: 8rem !important;
+  font-size: 20px;
+  resize: none;
+  width: 97%;
+  border-radius: 10px;
+  margin-left: 2%;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px #c2d9e9;
+}
+
+.add-btn {
+  border-radius: 5px;
+  margin-left: 1.5%;
+  width: 97%;
+  border: none;
+  outline: none;
+  background-color: #ff8b00;
+  color: #fff;
+  font-size: 25px;
+}
+
+.add-btn:hover {
+  transition: 1s ease all;
+  opacity: 0.9;
+  background-color: #fda500;
+  color: #ff000d;
+}
+
+section {
+  margin-bottom: 7%;
+}
