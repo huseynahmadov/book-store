@@ -270,17 +270,11 @@ function booksLoad() {
 
             let books = data[result];
 
-            let newBook = $(`<div>
-            <div class="card " style="width: 15rem; ">
-                <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
-                <div class="card-body ">
-                    <h5 class="card-title text-center ">${books.bookName}</h5>
-                    <p class="card-text text-center ">Harry potter</p>
-                    <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
-                </div>
-                  </div>
-                     </div>`);
-            $(".best-seller").append(newBook)
+            //     let newBook = $(` <div class="slick-slide slick-cloned">
+            //     <img src="${books.imageUrl}" style="width:100px; height:100px">
+            //     <span>${books.bookName}</span>
+            // </div>`);
+            //     $(".slick-track").append(newBook);
 
         }
     });
