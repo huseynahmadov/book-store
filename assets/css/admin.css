@@ -64,36 +64,6 @@ body {
   box-shadow: 0 0 10px #c2d9e9;
 }
 
-<<<<<<< HEAD
-.add-btn,
-.add-info-btn {
-    border-radius: 5px;
-    margin-left: 1.5%;
-    width: 97%;
-    border: none;
-    outline: none;
-    background-color: #FF8B00;
-    color: #fff;
-    font-size: 25px;
-}
-
-.add-btn:hover,
-.add-info-btn:hover {
-    transition: 1s ease all;
-    transform: rotateX(360deg);
-    opacity: 0.9;
-    background-color: #fda500;
-    color: #ff000d;
-}
-.about-store{
-    margin-top: 190px;
-}
-.section-title-1{
-    font-family: Montserrat;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 58.86px;
-=======
 .add-btn {
   border-radius: 5px;
   margin-left: 1.5%;
@@ -107,7 +77,6 @@ body {
 
 .add-btn:hover {
   transition: 1s ease all;
-  transform: rotateX(360deg);
   opacity: 0.9;
   background-color: #fda500;
   color: #ff000d;
@@ -115,5 +84,4 @@ body {
 
 section {
   margin-bottom: 7%;
->>>>>>> 7bbdc455e783422a78d305cd7fcc9612597230e3
 }
