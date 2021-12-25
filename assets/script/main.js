@@ -257,9 +257,9 @@ $("#about-btn").on("click", function(e) {
     CATALOG SECTION
 */
 window.onload = booksLoad;
+console.log("sdklskd")
 
 function booksLoad() {
-    console.log("kfdldkf")
     const booksInfo = ref(db, "newBooks/");
     onValue(booksInfo, (snapshot) => {
         const data = snapshot.val();
