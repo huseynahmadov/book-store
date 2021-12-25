@@ -274,7 +274,7 @@ function booksLoad() {
                 <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
                 <div class="card-body ">
                     <h5 class="card-title text-center ">${books.bookName}</h5>
-                    <p class="card-text text-center ">Harry potter</p>
+                    <p class="card-text text-center ">${books.authorName}</p>
                     <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
                 </div>
             </div>
@@ -282,9 +282,45 @@ function booksLoad() {
             $('.items').append(newBook)
            
             
-
         }
-        $('.asass').html('<script src="./assets/script/slider.js " defer></script>')
+        
+$('.asass').html('<script src="./assets/script/slider.js " defer></script>')
     });
 }
+
+$('.fantastic').on('click',function(){
+     $('.asass').empty();
+     $('.items').css("display","none");
+    const booksInfo = ref(db, "newBooks/");
+    onValue(booksInfo, (snapshot) => {
+        const data = snapshot.val();
+
+        
+        for (let result in data) {
+            var books = data[result];
+            if(books.bookType === 'Fantastic'){
+               
+
+            let newBook = $(`<div>
+            <div class="card " style="width: 15rem; ">
+                <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
+                <div class="card-body ">
+                    <h5 class="card-title text-center ">${books.bookName}</h5>
+                    <p class="card-text text-center ">${books.authorName}</p>
+                    <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
+                </div>
+            </div>
+        </div>`);
+        
+         $('.fantastics').append(newBook)  
+           }  
+    }
+
+   $('.asass').html('<script src="./assets/script/slider.js " defer></script>')
+    });
+
+})
+
+
+
 console.log('salam')
