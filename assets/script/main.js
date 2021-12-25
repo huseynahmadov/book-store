@@ -270,7 +270,7 @@ function booksLoad() {
             let books = data[result];
 
             let newBook = $(`<div>
-            <div class="card " style="width: 15rem; ">
+            <div class="card " style="width: 15rem;">
                 <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
                 <div class="card-body ">
                     <h5 class="card-title text-center ">${books.bookName}</h5>
@@ -279,8 +279,9 @@ function booksLoad() {
                 </div>
             </div>
         </div>`);
-            $(".best-seller").append(newBook)
+            $(".best-seller").append(newBook);
 
         }
     });
 }
+
