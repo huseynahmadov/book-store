@@ -284,7 +284,7 @@ function booksLoad() {
             
 
         }
-        $('.asas').html('<script src="./assets/script/slider.js " defer></script>')
+        $('.asass').html('<script src="./assets/script/slider.js " defer></script>')
     });
 }
 console.log('salam')
