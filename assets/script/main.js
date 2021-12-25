@@ -279,8 +279,11 @@ function booksLoad() {
                 </div>
             </div>
         </div>`);
-            $(".best-seller").append(newBook)
+            $('.items').append(newBook)
+           
+            
 
         }
+        $('.asas').html('<script src="./assets/script/slider.js " defer></script>')
     });
 }
