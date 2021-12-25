@@ -12,4 +12,4 @@ $(document).ready(function() {
 
 
 });
-console.log('salammgisfsf')
+console.log('salammgisfdsfsf')
