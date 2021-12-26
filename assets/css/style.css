@@ -8,6 +8,11 @@
     }
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
 :root {
     --mainColorText: #241400;
     --mainColorHome: #391f00;
@@ -59,6 +64,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 6px;
+    height: 5px;
 }
 
 
@@ -142,4 +148,24 @@ body {
 .slick-prev,
 .slick-next {
     background-color: black;
+}
+
+.type-list a {
+    text-decoration: none;
+}
+
+.type-list a:hover {
+    transition: 1s ease all;
+    color: #e16a00;
+    font-weight: 500;
+}
+
+.read-more {
+    background-color: #E16A00
+}
+
+.read-more:hover {
+    transition: 1s ease all;
+    opacity: 0.8;
+    background-color: #e16a00 !important;
 }
