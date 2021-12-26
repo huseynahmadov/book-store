@@ -1,0 +1,178 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E5E5E5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.library {
+    color: #720418;
+    font-weight: 800;
+    border-bottom: 3px solid gray;
+}
+
+.image-container {
+    display: flex;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    width: 100%;
+}
+
+a {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 500;
+    margin-right: 50px;
+    text-decoration: none;
+    color: #241400;
+}
+
+a:hover {
+    transition: 1s ease all;
+    text-decoration: none;
+    opacity: 0.7;
+    font-weight: 900;
+    color: #E16A00;
+}
+
+.joinus-btn {
+    border: none;
+    background-color: #E5E5E5;
+}
+
+.join-us-modal {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #E16A00;
+    color: #fff;
+}
+
+.join-us-modal span {
+    margin: auto;
+}
+
+.navbar-row {
+    display: flex;
+    width: 100%;
+}
+
+.about {
+    color: #E16A00;
+}
+
+.profile-img {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.alt-title {
+    font-weight: 500;
+}
+
+.first-section {
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.book-home {
+    margin-top: -340px;
+    margin-left: -50px;
+}
+
+.catalog-row {
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.catalog-section {
+    margin-top: 100px;
+}
+
+.catalog-link {
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    background-color: #FFF;
+    border-radius: 20px;
+}
+
+.catalog-link p {
+    margin: auto;
+}
+
+.catalog-col {
+    display: flex;
+    justify-content: center;
+}
+
+.about-store {
+    margin-top: 150px;
+}
+
+.social-row {
+    margin-top: 150px;
+}
+
+.social-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.follow-us {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.social-section {
+    display: flex;
+    justify-content: center;
+}
+
+.catalog-row {
+    margin-left: 3.5%;
+}
+
+footer {
+    width: 115%;
+    margin-top: 100px;
+    background-color: #391F00;
+    padding: 100px;
+}
+
+.footer-first,
+.footer-second,
+.footer-third {
+    color: #fff;
+    font-size: 15px;
+}
+
+.footer-first .popular,
+.footer-second .information,
+.footer-third .help {
+    font-size: 25px;
+}
+
+form {
+    display: none;
+    background-color: #fff;
+    width: 30%;
+}
