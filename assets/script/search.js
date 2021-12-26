@@ -40,5 +40,5 @@ $(document).on("click", "#searchBook", function() {
     $("#book-img").attr("src", result.smallImageURL);
     $("#book-name").text(result.title);
     $("#author-name").text(result.author);
-    //   Create div
+    //   Create divfdsdd
 });
