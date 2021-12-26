@@ -15,7 +15,6 @@ const firebaseConfig = initializeApp({
 });
 
 const db = getDatabase();
-
 const booksInfo = ref(db, "newBooks/");
 let clearAllBook = function(emptyDiv, bookType) {
     onValue(booksInfo, (snapshot) => {
