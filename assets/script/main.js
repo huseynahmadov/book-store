@@ -211,21 +211,25 @@ onValue(usersInfos, (snapshot) => {
 // ==============
 // ADD NEW BOOK
 // ==============
-$("#bf-add-btn").on("click", function (e) {
-  let bookName = $("#bf-book-name").val();
-  let authorName = $("#bf-author-name").val();
-  let imageUrl = $("#bf-image-url").val();
-  let description = $("#bf-description").val();
-  let bookType = $("#bf-book-type").val();
-  $("#book-form").find(":input").val("");
-  var objKey = push(ref(db, "/")).key;
-  set(ref(db, "newBooks/" + objKey), {
-    bookName,
-    authorName,
+$("#about-btn").on("click", function (e) {
+  let titleName = $("#about-name").val();
+  let imageUrl = $("#about-img-url").val();
+  let description = $("#about-description").val();
+  $("#about-store").find(":input").val("");
+  set(ref(db, "aboutStore/"), {
+    titleName,
     imageUrl,
     description,
-    bookType,
   });
+});
+
+const aboutStore = ref(db, "aboutStore/");
+onValue(aboutStore, (snapshot) => {
+  const data = snapshot.val();
+
+  $("#about-title").text(data.titleName);
+  $("#about-description").text(data.description);
+  $("#about-img").attr("src", data.imageUrl);
 });
 
 /* 
