@@ -85,3 +85,21 @@ body {
 section {
   margin-bottom: 7%;
 }
+
+#search-book input {
+  border-radius: 20px !important;
+}
+
+#search-result-list {
+  overflow: auto;
+  height: 200px;
+  border-radius: 20px;
+  padding: 20px;
+}
+#search-result-list div {
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+#search-result-list div:hover {
+  text-decoration: underline;
+}

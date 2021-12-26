@@ -50,6 +50,26 @@
       <button class="openbtn" onclick="openNav()">☰</button>
     </div>
 
+    <section id="search-book">
+      <div class="container">
+        <div class="input-group flex-nowrap w-50">
+          <input
+            id="admin-search"
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            aria-label="Username"
+            aria-describedby="addon-wrapping"
+            list="title-choices"
+          />
+           <div id="searchAdminResult" class="d-none jumbotron-fluid position-absolute bg-white shadow rounded-35 overflow-auto w-100 mt-5 pt-5 pb-1">
+             <div class="container">
+               <div id="search-result-list"></div>
+             </div>
+           </div>
+      </div>
+    </section>
+
     <section class="book-form" id="book-form">
       <div class="container">
         <p class="section-title">Book form</p>
@@ -153,6 +173,7 @@
     ></script>
     <!-- Local Js -->
     <script type="module" src="./assets/script/main.js"></script>
+    <script type="module" src="./assets/script/admin.js"></script>
     <script>
       function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
