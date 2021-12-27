@@ -7,6 +7,9 @@
         opacity: 1;
     }
 }
+.types::-webkit-scrollbar {
+    height: 10px;
+  }
 
 html {
     -webkit-text-size-adjust: 100%;

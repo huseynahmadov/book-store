@@ -29,6 +29,11 @@ body {
   font-weight: 600;
   font-size: 30px;
 }
+.section-title-addbook{
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+}
 
 .inputs {
   display: flex;
@@ -38,7 +43,7 @@ body {
 .inputs input {
   border-radius: 5px;
   font-size: 20px;
-  height: 30px;
+  height: 40px;
   border: none;
   outline: none;
   box-shadow: 0 0 10px #c2d9e9;
@@ -57,6 +62,7 @@ body {
   font-size: 20px;
   resize: none;
   width: 97%;
+  max-width: 1070px;
   border-radius: 10px;
   margin-left: 2%;
   border: none;
@@ -68,6 +74,7 @@ body {
   border-radius: 5px;
   margin-left: 1.5%;
   width: 97%;
+  max-width: 1071px;
   border: none;
   outline: none;
   background-color: #ff8b00;
