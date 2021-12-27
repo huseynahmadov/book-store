@@ -252,6 +252,7 @@ $("#about-btn").on("click", function(e) {
     });
 });
 
+
 window.onload=allBooks;
 $('.allBook').html('<div class="items"></div>')
 function allBooks(){
@@ -277,12 +278,12 @@ function allBooks(){
               console.log(' dene umummilikde kitab var');
             }
             slider();
-            /*if($('.fantastis').on('click')){
-                console.log('dadang');
-                $('.items').empty();
-            }*/
     })
 }
+$('#all').on('click',function(){
+    $('.allBook').html('<div class="items"></div>')
+    allBooks();
+})
 
 $('#fantastic-btn').on('click',function(){
     $('.allBook').empty();
@@ -349,7 +350,6 @@ $('#adventure-btn').on('click',function(){
     })
     
 })
-
 $('#detective-btn').on('click',function(){
     $('.allBook').empty();
     console.log('detective buton ise dusdu')
@@ -447,3 +447,61 @@ $('#tragedy-btn').on('click',function(){
 
 
 
+//-------------------------------------------------------------------
+/*
+$('.types-list').on('click',function(){
+    $('.allBook').empty();
+    console.log('teze buton ise dusdu')
+    $('.allBook').html('<div class="items"></div>')
+
+    const booksInfo = ref(db , "newBooks/");
+    onValue(booksInfo,(snapshot)=>{
+        const data = snapshot.val();
+            for(let result in data){
+                var books = data[result];
+              
+                    
+                if(books.bookType === 'Fantastic'){
+                
+                var newBookFantastic =  $(`<div>
+                    <div class="card " style="width: 15rem; ">
+                        <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
+                        <div class="card-body ">
+                            <h5 class="card-title text-center ">${books.bookName}</h5>
+                            <p class="card-text text-center ">${books.authorName}</p>
+                            <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
+                        </div>
+                    </div>
+                </div>`);
+                console.log(' dene fantastic kitab var');
+                }else if(books.bookType === 'Adventure'){
+                    console.log(' dene adventure kitab var')
+                    
+                    var newBookAdventure =  $(`<div>
+                    <div class="card " style="width: 15rem; ">
+                        <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
+                        <div class="card-body ">
+                            <h5 class="card-title text-center ">${books.bookName}</h5>
+                            <p class="card-text text-center ">${books.authorName}</p>
+                            <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
+                        </div>
+                    </div>
+                </div>`);    
+                }
+                 $('.type-list .li:nth-child(5)').on('click',function(){
+                     $('.items').append(newBookFantastic)
+                 })               
+            }
+            slider();
+    })
+    
+})
+
+
+
+
+
+
+
+*/
+//-------------------------------------------------------------------

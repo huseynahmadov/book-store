@@ -7,6 +7,9 @@
         opacity: 1;
     }
 }
+.types::-webkit-scrollbar {
+    height: 10px;
+  }
 
 :root {
     --mainColorText: #241400;
@@ -145,15 +148,15 @@ body {
     font-weight: 600;
 }
 
-
-/* .types .type-list {
+/*
+ .types .type-list {
     display: flex;
     margin-right: 40%;
-}
-*/
+}*/
+
 
 .type-list li {
-    margin-left: 10%;
+    padding-right: 30px;
 }
 
 .type-list li a {
@@ -168,4 +171,12 @@ body {
 
 .card a {
     background-color: #E16A00;
+}
+
+.footer-word{
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 35.31px;
+
 }

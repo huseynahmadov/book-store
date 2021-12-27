@@ -68,7 +68,7 @@ function sliderCrime(){
     });
 }
 function sliderTragedy(){
-    $('.ccc').slick({
+    $('.ttt').slick({
         infinite: true,
         slidesToShow: 3,
         lazyLoad: 'ondemand',
