@@ -116,7 +116,7 @@ $(document).on("click", ".read-more", function() {
         for (let result in allInfos) {
             let infos = allInfos[result];
             // console.log(infos.bookName)
-            console.log(document.querySelectorAll(".book-name"))
+            console.log($(".book-name").data("bookName"))
 
             if ($(".book-name").data("bookName") === infos.bookName) {
                 // $("#book-name").text(infos.bookName)
