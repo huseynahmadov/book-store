@@ -15,6 +15,10 @@ body {
     border: 1px solid #999;
 }
 
+.slick-list {
+    margin-top: 100px !important;
+}
+
 .slick-slide {
     margin: 10px;
 }

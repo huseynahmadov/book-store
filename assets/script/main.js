@@ -1,5 +1,4 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-
 import {
     getDatabase,
     ref,
@@ -26,6 +25,7 @@ const firebaseApp = initializeApp({
 // ==============
 // SIGN IN ADMIN PANEL
 // ==============
+let userId = 1;
 
 const validateEmail = (email) => {
     return email.match(
@@ -42,7 +42,7 @@ join.on("click", function(e) {
     var MinLength = 6;
     var MaxLength = 15;
     if (password.length < MinLength || password.length > MaxLength) {
-        $("#password-error-message").text("Şifrə 6-15 aralığı olmadır");
+        $("#password-error-message").text("Şifrə 6-12 aralığı olmadır");
         $("#password-error-message").css({
             color: "red",
         });
@@ -84,6 +84,7 @@ join.on("click", function(e) {
 // SIGN OUT ADMIN PANEL
 // ==============
 $(document).on("click", "#log-out", function() {
+    console.log("asd");
     signOut(auth)
         .then((userCredential) => {
             window.location = "./admin-login.html";
@@ -168,7 +169,6 @@ $("#join-us").on("click", function() {
     let email = $("#modal-email").val();
 
     var objKey = push(ref(db, "/")).key;
-
     set(ref(db, "join-us-infos/" + objKey), {
         username: name,
         surname,
@@ -210,22 +210,25 @@ onValue(usersInfos, (snapshot) => {
 // ==============
 // ADD NEW BOOK
 // ==============
-$("#bf-add-btn").on("click", function(e) {
-    let bookName = $("#bf-book-name").val();
-    let authorName = $("#bf-author-name").val();
-    let imageUrl = $("#bf-image-url").val();
-    let description = $("#bf-description").val();
-    let bookType = $("#bf-book-type").val();
-
-    $("#book-form").find(":input").val("");
-    var objKey = push(ref(db, "/")).key;
-    set(ref(db, "newBooks/" + objKey), {
-        bookName,
-        authorName,
+$("#about-btn").on("click", function(e) {
+    let titleName = $("#about-name").val();
+    let imageUrl = $("#about-img-url").val();
+    let description = $("#about-description").val();
+    $("#about-store").find(":input").val("");
+    set(ref(db, "aboutStore/"), {
+        titleName,
         imageUrl,
         description,
-        bookType,
     });
+});
+
+const aboutStore = ref(db, "aboutStore/");
+onValue(aboutStore, (snapshot) => {
+    const data = snapshot.val();
+
+    $("#about-title").text(data.titleName);
+    $("#about-description").text(data.description);
+    $("#about-img").attr("src", data.imageUrl);
 });
 
 /* 
@@ -251,161 +254,3 @@ $("#about-btn").on("click", function(e) {
         description,
     });
 });
-
-/*
-
-    CATALOG SECTION
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-window.onload = booksLoad;
-console.log("sdklskd")
-
-function booksLoad() {
-    const booksInfo = ref(db, "newBooks/");
-    onValue(booksInfo, (snapshot) => {
-        const data = snapshot.val();
-
-
-        for (let result in data) {
-
-            let books = data[result];
-
-            let newBook = $(`<div>
-            <div class="card " style="width: 15rem; ">
-                <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
-                <div class="card-body ">
-                    <h5 class="card-title text-center ">${books.bookName}</h5>
-                    <p class="card-text text-center ">${books.authorName}</p>
-                    <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
-                </div>
-            </div>
-        </div>`);
-            $('.items').append(newBook)
-           
-            
-        }
-        
-$('.asass').html('<script src="./assets/script/slider.js " defer></script>')
-    });
-}
-
-$('.fantastic').on('click',function(){
-     
-     $(".fantastic").off('click');
-     $("#adventures").on('click');
-     $('.items').css("display","none");
-     $('#adventure').css("display","none")
-     $('.fantastics').css("display","block")
-    const booksInfo = ref(db, "newBooks/");
-    onValue(booksInfo, (snapshot) => {
-        const data = snapshot.val();
-
-        
-        for (let result in data) {
-            var books = data[result];
-            if(books.bookType === 'Fantastic'){
-               
-
-            let newBook = $(`<div>
-            <div class="card " style="width: 15rem; ">
-                <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
-                <div class="card-body ">
-                    <h5 class="card-title text-center ">${books.bookName}</h5>
-                    <p class="card-text text-center ">${books.authorName}</p>
-                    <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
-                </div>
-            </div>
-        </div>`);
-        
-         $('.fantastics').append(newBook)  
-           }  
-           
-    }
-
-   $('.asass').html('<script src="./assets/script/slider2.js " defer></script>')
-    });
-
-})
-$("#adventures").on('click', function() {
-    $("#adventures").off('click');
-    $(".fantastic").on('click');
-    $(".fantastics").css("display", "none");
-    $('.items').css("display", "none");
-    $('#adventure').css("display","block")
-
-    const booksInfo = ref(db, "newBooks/");
-    onValue(booksInfo, (snapshot) => {
-        const data = snapshot.val();
-
-
-        for (let result in data) {
-            var books = data[result];
-            if (books.bookType === 'Adventure') {
-
-
-                let newBook = $(`<div>
-            <div class="card " style="width: 15rem; ">
-                <img class="card-img-top " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
-                <div class="card-body ">
-                    <h5 class="card-title text-center " style="height:60px">${books.bookName}</h5>
-                    <p class="card-text text-center " style="height:80px">${books.authorName}</p>
-                    <a href="# " class="btn btn-primary " style="margin-left: 22% !important ">Read more</a>
-                </div>
-            </div>
-        </div>`);
-
-                $('#adventure').append(newBook)
-            }
-        }
-        $('.asass').html('<script src="./assets/script/slider3.js " defer></script>')
-    });
-})
-
-
-
-*/
