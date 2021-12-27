@@ -256,6 +256,52 @@ $("#about-btn").on("click", function(e) {
 
     CATALOG SECTION
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 window.onload = booksLoad;
 console.log("sdklskd")
 
@@ -362,4 +408,4 @@ $("#adventures").on('click', function() {
 
 
 
-console.log('salam')
+*/

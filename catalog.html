@@ -100,19 +100,23 @@
         <div class="container height-vh">
             <p style="margin-top: 5%;">All books</p>
 
-            <section class="types" style="display: flex; justify-content: center;">
+            <section class="types" style="display: flex; justify-content: center; margin: 0 auto; width: 400px; overflow-x: scroll; ">
                 <ul class="type-list" style="display: flex;">
+                    
                     <li>
-                        <a class="types-list crime" href="#">Crime</a>
+                        <a class="types-list" id="crime-btn" href="#">Crime</a>
                     </li>
                     <li>
-                        <a class="types-list" href="#">Detective</a>
+                        <a class="types-list" id="detective-btn" href="#">Detective</a>
                     </li>
                     <li>
-                        <a class="types-list" id="adventures" href="#">Adventures</a>
+                        <a class="types-list" id="adventure-btn" href="#">Adventures</a>
                     </li>
                     <li>
-                        <a class="types-list fantastic" href="#">Fantastic</a>
+                        <a class="types-list " id="fantastic-btn" href="#">Fantastic</a>
+                    </li>
+                    <li>
+                        <a class="types-list" id="tragedy-btn" href="#">Tragedy</a>
                     </li>
 
                 </ul>
@@ -120,19 +124,8 @@
             </section>
 
             <div class="row" >
-                <div class="col-12 ">
-                    <div class="items ">
-                     
-                       
-
-
+                <div class="allBook col-12 ">
                     
-                    </div>
-                    <div class="fantastics">
-
-                    </div>
-                    <div id="adventure">
-                       </div>
                 </div>
             </div>
 
@@ -141,7 +134,7 @@
                 <div class="col-12 ">
                   <p class="text-center ">Bestseller</p>
 
-                    <div class="items best-seller d-flex">
+                    <div class="items1 best-seller d-flex">
                      
 
                     </div>
@@ -263,7 +256,8 @@
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF "
       crossorigin="anonymous "
     ></script>
-    <script type="module" src="./assets/script/main.js"></script>
-<div class="asass"></div>
+   <!-- <script type="module" src="./assets/script/main.js"></script> -->
+    <script type="module" src="./assets/script/index.js"defer></script>
+    <script src="./assets/script/slider.js"></script>
   </body>
 </html>
