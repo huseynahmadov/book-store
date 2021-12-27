@@ -1,14 +1,10 @@
 html,
 body {
-    background-color: #FFF
+    background-color: #fff;
 }
 
 .items,
-.fff,
-.aaa,
-.ddd,
-.ccc,
-.ttt {
+.fantastics {
     width: 90%;
     margin: 0px auto;
     margin-top: 100px;
@@ -30,11 +26,9 @@ body {
 .slick-next {
     width: 50px;
     height: 50px;
-    background-color: black;
 }
 
 .slick-prev {
     width: 50px;
     height: 50px;
-    background-color: black;
 }
