@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./assets/css/sidebar.css" />
 </head>
 
-<body>
+<body onload="if (document.referrer == '') self.location='admin-login.html';">
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <div class="sideIcon">
@@ -82,7 +82,7 @@
                 <label for="book-image-url">Book Image Url</label>
                 <input class="book-image-url" type="text" id="about-img-url" />
                 <label for="description">Description</label>
-                <textarea class="description" cols="30" rows="10" id="bf-description"></textarea>
+                <textarea class="description" cols="30" rows="10" id="bf-about-description"></textarea>
                 <button class="add-btn" id="about-btn">About info add</button>
             </div>
         </div>
