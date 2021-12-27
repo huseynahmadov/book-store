@@ -43,6 +43,16 @@ li {
     border: none !important;
 }
 
+#navbarNav ul li a {
+    font-weight: 500;
+}
+
+#navbarNav ul li a:hover {
+    transition: 1s ease all;
+    opacity: 0.8;
+    color: #E16A00 !important;
+}
+
 body {
     font-family: var(--fontMontserrat);
     animation: fadeInAnimation ease 1.3s;
@@ -150,13 +160,20 @@ body {
     background-color: black;
 }
 
+.type-list {
+    margin-left: 15em;
+}
+
+.type-list li:not(:first-child) {
+    margin-left: 20px;
+}
+
 .type-list a {
     text-decoration: none;
 }
 
 .type-list a:hover {
     transition: 1s ease all;
-    color: #e16a00;
     font-weight: 500;
 }
 
