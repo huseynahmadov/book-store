@@ -439,8 +439,6 @@ $('#tragedy-btn').on('click',function(){
                 console.log(' dene tragedy kitab var');
                 }
                 $('.trtr').css("display","flex")
-                
-                
             }
             sliderTragedy();
     })
