@@ -92,7 +92,6 @@ $(document).on("click", "#log-out", function() {
         .then((userCredential) => {
             localStorage.removeItem('user');
             window.location = "./admin-login.html";
-            console.log("userCredential");
         })
         .catch((error) => {
             console.log(error.message);
