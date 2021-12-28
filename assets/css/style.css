@@ -1,195 +1,256 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0.1;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .types::-webkit-scrollbar {
-    height: 10px;
+  height: 10px;
 }
 
 html {
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
-    --mainColorText: #241400;
-    --mainColorHome: #391f00;
-    --mainColorOrange: #e16a00;
-    --fontRoboto: "Roboto", sans-serif;
-    --fontMontserrat: "Montserrat", sans-serif;
+  --mainColorText: #241400;
+  --mainColorHome: #391f00;
+  --mainColorOrange: #e16a00;
+  --fontRoboto: "Roboto", sans-serif;
+  --fontMontserrat: "Montserrat", sans-serif;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .btn {
-    border: none !important;
+  border: none !important;
 }
 
 .btn-lg {
-    border: none !important;
+  border: none !important;
 }
 
 body {
-    font-family: var(--fontMontserrat);
-    animation: fadeInAnimation ease 1.3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  font-family: var(--fontMontserrat);
+  animation: fadeInAnimation ease 1.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .read-more-section {
-    animation: fadeInAnimation ease 1.3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  animation: fadeInAnimation ease 1.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
-
+/* Navbar */
+.nav-link {
+  font-size: 12px;
+}
+/*  */
 .text-main {
-    color: var(--mainColorText);
+  color: var(--mainColorText);
 }
 
 .footer-info {
-    background-color: var(--mainColorHome);
-}
-
-.join-span {
-    font-family: var(--fontRoboto);
+  background-color: var(--mainColorHome);
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 5px;
+  width: 6px;
+  height: 5px;
 }
-
 
 /* Track */
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
 }
-
 
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-    background: var(--mainColorText);
-    border-radius: 10px;
+  background: var(--mainColorText);
+  border-radius: 10px;
 }
 
 .join-div {
-    padding: 0px;
+  padding: 0px;
+}
+
+.join-span {
+  font-family: var(--fontRoboto);
+  font-size: 14px;
 }
 
 .join-div button {
-    padding: 0px;
-    width: 4rem;
-    display: flex;
-    align-items: center;
-}
-
-.join-div span {
-    font-size: 18px;
+  padding: 0px;
+  width: 4rem;
+  display: flex;
+  align-items: center;
 }
 
 .join-div img {
-    width: 18px;
+  width: 18px;
 }
 
+/* index.html */
+.navbar-brand {
+  width: 172px;
+}
+.books-a-z {
+  font-size: 36px;
+  font-weight: 900;
+}
+.a-z-text {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.go-to-btn a {
+  font-size: 15px !important;
+}
+
+.catalog-text {
+  font-size: 25px;
+  margin-bottom: 50px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.main-card-text a {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.about-store-text {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+}
+.as-result-numbers p {
+  font-weight: 900;
+  font-size: 50px;
+  margin-right: 30px;
+}
+.as-result-text p {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.delivery-title {
+  font-weight: 900;
+  font-size: 25px;
+  text-align: center;
+}
+.delivery-text {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.follow-us-title {
+  font-weight: 900;
+  font-size: 25px;
+  text-align: center;
+}
 .icons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .icon {
-    width: 20%;
-    cursor: pointer;
+  width: 20%;
+  cursor: pointer;
 }
 
 .icon img {
-    width: 75%;
+  width: 75%;
 }
 
-
+.footer-list a {
+  font-size: 14px;
+}
 /* Only Catalog, About store and Contact Us sections*/
 
 @media screen and (max-width: 992px) {
-    .navbar-toggler {
-        margin-left: auto;
-    }
-    .join-div,
-    .join-div span,
-    .join-div button {
-        padding: 0 !important;
-        margin: 3.2px 0 !important;
-        font-family: var(--fontMontserrat);
-    }
-    .join-div img {
-        display: none;
-    }
+  .navbar-toggler {
+    margin-left: auto;
+  }
+  .join-div,
+  .join-div span,
+  .join-div button {
+    padding: 0 !important;
+    margin: 3.2px 0 !important;
+    font-family: var(--fontMontserrat);
+  }
+  .join-div img {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .icons {
-        justify-content: space-between;
-    }
-    .icon {
-        width: 30%;
-    }
+  .icons {
+    justify-content: space-between;
+  }
+  .icon {
+    width: 20%;
+  }
 }
 
 .slick-prev:before {
-    content: url("/assets/images/left.png") !important;
-    margin-left: -50px;
+  content: url("/assets/images/left.png") !important;
+  margin-left: -50px;
 }
 
 .slick-next:before {
-    content: url("/assets/images/right.png") !important;
-    margin-right: -20px;
+  content: url("/assets/images/right.png") !important;
+  margin-right: -20px;
 }
 
 .type-list {
-    margin-left: 15em;
+  margin-left: 15em;
 }
 
 .type-list li:not(:first-child) {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .type-list a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .type-list a:hover {
-    transition: 1s ease all;
-    font-weight: 500;
+  transition: 1s ease all;
+  font-weight: 500;
 }
 
 .read-more {
-    background-color: #e16a00;
+  background-color: #e16a00;
 }
 
 .read-more:hover {
-    transition: 1s ease all;
-    opacity: 0.8;
-    background-color: #e16a00 !important;
+  transition: 1s ease all;
+  opacity: 0.8;
+  background-color: #e16a00 !important;
 }
