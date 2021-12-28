@@ -36,7 +36,6 @@ const validateEmail = (email) => {
 const auth = getAuth(firebaseApp);
 var join = $(".join");
 join.on("click", function(e) {
-
     const email = $(".username").val();
     const password = $(".password").val();
 
@@ -44,17 +43,13 @@ join.on("click", function(e) {
     var MaxLength = 15;
     if (password.length < MinLength || password.length > MaxLength) {
         $("#password-error-message").text("Şifrə 6-12 aralığı olmadır");
-        $("#password-error-message").css({
-            color: "red",
-        });
     }
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-
             console.log("user logged in:", userCredential.user);
 
-            localStorage.setItem('user', JSON.stringify(userCredential))
+            localStorage.setItem("user", JSON.stringify(userCredential));
 
             document.querySelector(".login-container").classList.add("d-none");
             document.querySelector(".myGif").src =
@@ -73,12 +68,7 @@ join.on("click", function(e) {
             $result.text("");
 
             if (!validateEmail(email)) {
-                $result.text("düzgün email adresi daxil edin");
-                $result.css({
-                    color: "red",
-                    "font-size": "20px",
-                    "font-weight": "400",
-                });
+                $result.text("Düzgün email adresi daxil edin");
                 return false;
             }
         });
@@ -213,7 +203,7 @@ $("#about-btn").on("click", function(e) {
     let titleName = $("#about-name").val();
     let imageUrl = $("#about-img-url").val();
     let description = $("#bf-about-description").val();
-    console.log($("#bf-description").val())
+    console.log($("#bf-description").val());
     $("#about-store").find(":input").val("");
     set(ref(db, "aboutStore/"), {
         description,
@@ -225,7 +215,7 @@ $("#about-btn").on("click", function(e) {
 const aboutStore = ref(db, "aboutStore/");
 onValue(aboutStore, (snapshot) => {
     const data = snapshot.val();
-    console.log(data)
+    console.log(data);
     $("#about-title").text(data.titleName);
     $("#about-description").text(data.description);
     $("#about-img").attr("src", data.imageUrl);

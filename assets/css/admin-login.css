@@ -13,61 +13,78 @@ body {
   box-sizing: border-box;
   background-color: #720418;
   font-family: "Montserrat", sans-serif;
+  height: 100vh;
+}
+
+.animation-row {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20rem;
 }
 
 .login {
   text-align: center;
   background-color: #fff;
-  height: 550px;
   border-radius: 10px;
+  max-width: 662px;
+  display: block;
+  margin: 0 auto;
+  height: 380px;
 }
 
-.login input {
-  display: flex;
-  margin: auto;
-  height: 4rem;
-  border: 1px solid #999;
-  text-align: center;
-  font-size: 20px;
-  margin-top: 5%;
+.login-container div {
+  padding-top: 1.5rem;
+}
+
+.login input,
+.login button {
   width: 80%;
   outline: none;
+  border: 1px solid #cecece;
+  margin: 0 auto;
+  border-radius: 7px;
+  padding: 8px;
+  text-align: center;
 }
 
-.login div {
-  font-size: 30px;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+.login-container {
   font-weight: 700;
-  padding-top: 30px;
 }
 
 .join {
   background-color: #e16a00;
   color: #fff;
-  border: none;
-  outline: none;
-  margin-top: 5%;
-  width: 80%;
-  height: 5rem;
-  font-size: 30px;
+  font-size: 19px;
+  font-weight: 700;
 }
-
 .join:hover {
-  transition: 2s ease all;
+  transition: 1s ease all;
   opacity: 0.8;
-  /* transform: rotateX(360deg); */
 }
 
 input:focus {
-  transition: 1s ease all;
-  border: 2px solid #720418;
+  border: 1px solid #720418;
+}
+
+.inputs small {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #e74c3c;
 }
 .myGif {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.animation-row {
-  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
