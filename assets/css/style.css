@@ -55,44 +55,30 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-
-.read-more-section {
-  animation: fadeInAnimation ease 1.3s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-/* Navbar */
-.nav-link {
-  font-size: 12px;
-}
-/*  */
-.text-main {
-  color: var(--mainColorText);
-}
-
-.footer-info {
-  background-color: var(--mainColorHome);
-}
-
+/* 
+================================
+Scrollbar
+================================
+*/
 ::-webkit-scrollbar {
   width: 6px;
   height: 5px;
 }
-
-/* Track */
 
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
 
-/* Handle */
-
 ::-webkit-scrollbar-thumb {
   background: var(--mainColorText);
   border-radius: 10px;
 }
-
+/* 
+================================
+Navbar
+================================
+*/
 .join-div {
   padding: 0px;
 }
@@ -100,6 +86,23 @@ body {
 .join-span {
   font-family: var(--fontRoboto);
   font-size: 14px;
+}
+.navbar-brand {
+  width: 172px;
+}
+
+.nav-link {
+  font-size: 12px;
+}
+
+.read-more-section {
+  animation: fadeInAnimation ease 1.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.text-main {
+  color: var(--mainColorText);
 }
 
 .join-div button {
@@ -112,16 +115,49 @@ body {
 .join-div img {
   width: 18px;
 }
-
-/* index.html */
-.navbar-brand {
-  width: 172px;
+/* 
+================================
+Footer
+================================
+*/
+.footer-info {
+  background-color: var(--mainColorHome);
 }
+
+.follow-us-title {
+  font-weight: 900;
+  font-size: 25px;
+  text-align: center;
+}
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.icon {
+  width: 20%;
+  cursor: pointer;
+}
+
+.icon img {
+  width: 75%;
+}
+
+.footer-list a {
+  font-size: 14px;
+}
+/* 
+================================
+index.html
+================================
+*/
 .books-a-z {
   font-size: 36px;
   font-weight: 900;
   margin-bottom: 16px;
 }
+
 .a-z-text {
   font-weight: 400;
   font-size: 13px;
@@ -169,30 +205,11 @@ body {
   text-align: center;
 }
 
-.follow-us-title {
-  font-weight: 900;
-  font-size: 25px;
-  text-align: center;
-}
-.icons {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.icon {
-  width: 20%;
-  cursor: pointer;
-}
-
-.icon img {
-  width: 75%;
-}
-
-.footer-list a {
-  font-size: 14px;
-}
-/* Only Catalog, About store and Contact Us sections*/
+/* 
+===============================
+Header, icons
+===============================
+*/
 
 @media screen and (max-width: 992px) {
   .navbar-toggler {
@@ -217,41 +234,4 @@ body {
   .icon {
     width: 20%;
   }
-}
-
-.slick-prev:before {
-  content: url("/assets/images/left.png") !important;
-  margin-left: -50px;
-}
-
-.slick-next:before {
-  content: url("/assets/images/right.png") !important;
-  margin-right: -20px;
-}
-
-.type-list {
-  margin-left: 15em;
-}
-
-.type-list li:not(:first-child) {
-  margin-left: 20px;
-}
-
-.type-list a {
-  text-decoration: none;
-}
-
-.type-list a:hover {
-  transition: 1s ease all;
-  font-weight: 500;
-}
-
-.read-more {
-  background-color: #e16a00;
-}
-
-.read-more:hover {
-  transition: 1s ease all;
-  opacity: 0.8;
-  background-color: #e16a00 !important;
 }
