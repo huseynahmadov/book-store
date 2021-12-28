@@ -80,7 +80,7 @@ join.on("click", function(e) {
 $(document).on("click", "#log-out", function() {
     signOut(auth)
         .then((userCredential) => {
-            localStorage.removeItem('user');
+            localStorage.removeItem("user");
             window.location = "./admin-login.html";
         })
         .catch((error) => {

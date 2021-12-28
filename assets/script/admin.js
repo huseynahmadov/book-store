@@ -27,14 +27,11 @@ $("#admin-search").on("input", function() {
             },
         }).done(function(response) {
             //   $("#title-choices").empty();
-            console.log(response);
             for (let book of response) {
                 dataBook[book.title] = book;
 
                 $("#search-result-list").append(
-                    `<div class="search-result-item cursor-pointer" data-list="${book.title}"> 
-            ${book.title}
-        </div>`
+                    `<div class="search-result-item cursor-pointer" data-list="${book.title}"><i class="far fa-clock"></i> ${book.title}</div>`
                 );
             }
         });
