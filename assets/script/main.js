@@ -54,6 +54,8 @@ join.on("click", function(e) {
 
             console.log("user logged in:", userCredential.user);
 
+            localStorage.setItem('user', JSON.stringify(userCredential))
+
             document.querySelector(".login-container").classList.add("d-none");
             document.querySelector(".myGif").src =
                 "assets/images/Infinity-1s-200px.gif";
@@ -86,9 +88,9 @@ join.on("click", function(e) {
 // SIGN OUT ADMIN PANEL
 // ==============
 $(document).on("click", "#log-out", function() {
-    console.log("asd");
     signOut(auth)
         .then((userCredential) => {
+            localStorage.removeItem('user');
             window.location = "./admin-login.html";
             console.log("userCredential");
         })
