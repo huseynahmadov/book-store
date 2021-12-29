@@ -13,23 +13,23 @@ const firebaseConfig = initializeApp({
     messagingSenderId: "434964076450",
     appId: "1:434964076450:web:40c86964585bb16b8384fb",
 });
-
+let count = 1;
 const db = getDatabase();
 const booksInfo = ref(db, "newBooks/");
 let clearAllBook = function(emptyDiv, bookType) {
-    onValue(booksInfo, (snapshot) => {
-        const data = snapshot.val();
+        onValue(booksInfo, (snapshot) => {
+                    const data = snapshot.val();
 
-        for (let result in data) {
-            var books = data[result];
-            if (books.bookType === `${bookType}`) {
-                let newBook = $(`<div class = "rounded text-center">
+                    for (let result in data) {
+                        var books = data[result];
+                        if (books.bookType === `${bookType}`) {
+                            let newBook = $(`<div class = "rounded text-center">
             <div class="card shadow p-3 rounded" style="width: 15rem; ">
                 <img class="card-img-top img-fluid " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
                 <div class="card-body ">
-                    <h5 class="card-title text-center " style="width:100%; height:90px">${books.bookName}</h5>
+                    <h5 class="card-title text-center book-name" style="width:100%; height:90px">${books.bookName}</h5>
                     <p class="card-text text-center " style="height:90px">${books.authorName}</p>
-                    <a href="# " class="btn btn-primary read-more">Read more</a>
+                    <button class="btn btn-primary read-more">Read more</button>
                 </div>
             </div>
         </div>`);
@@ -102,3 +102,37 @@ $("#fantastic").on("click", function() {
     hideCategories();
     $("#fantastic-slick").removeClass("d-none");
 });
+
+
+
+$(document).on("click", ".read-more", function() {
+
+    $(".catalog-section").addClass("d-none");
+    $(".read-more-section").removeClass("d-none");
+
+    const readMore = ref(db, "newBooks/");
+    onValue(readMore, (snapshot) => {
+        const allInfos = snapshot.val();
+        for (let result in allInfos) {
+            let infos = allInfos[result];
+            
+         //console.log(infos.bookName)
+        //console.log($('.book-name').data('bookname'));
+        if ($(".card-title .text-center .book-name").html() === infos.bookName) {
+            console.log($(".card-title .text-center .book-name").html());
+            alert('salam')
+             // $("#book-name").text(infos.bookName)
+             $("#author-name").text(infos.authorName)
+             $("#book-img").src = infos.imageUrl;
+            // console.log(infos.bookName);`
+         }
+         var x=document.querySelectorAll('.book-name').innerHTML
+            console.log(x);
+        }
+
+    });
+});
+
+$(".back-btn").on("click", function() {
+    window.location = "/catalog.html"
+})
