@@ -43,14 +43,13 @@ join.on("click", function(e) {
     var MaxLength = 15;
     if (password.length < MinLength || password.length > MaxLength) {
         $("#password-error-message").text("Şifrə 6-12 aralığı olmadır");
-        $("#password-error-message").css({
-            color: "red",
-        });
     }
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log("user logged in:", userCredential.user);
+
+            localStorage.setItem("user", JSON.stringify(userCredential));
 
             document.querySelector(".login-container").classList.add("d-none");
             document.querySelector(".myGif").src =
@@ -69,12 +68,7 @@ join.on("click", function(e) {
             $result.text("");
 
             if (!validateEmail(email)) {
-                $result.text("düzgün email adresi daxil edin");
-                $result.css({
-                    color: "red",
-                    "font-size": "20px",
-                    "font-weight": "400",
-                });
+                $result.text("Düzgün email adresi daxil edin");
                 return false;
             }
         });
@@ -84,11 +78,10 @@ join.on("click", function(e) {
 // SIGN OUT ADMIN PANEL
 // ==============
 $(document).on("click", "#log-out", function() {
-    console.log("asd");
     signOut(auth)
         .then((userCredential) => {
+            localStorage.removeItem("user");
             window.location = "./admin-login.html";
-            console.log("userCredential");
         })
         .catch((error) => {
             console.log(error.message);
@@ -202,55 +195,51 @@ onValue(usersInfos, (snapshot) => {
 /* 
 
 
-        BOOK FORM
+        ABOUT STORE
 
 
 */
-
-// ==============
-// ADD NEW BOOK
-// ==============
 $("#about-btn").on("click", function(e) {
     let titleName = $("#about-name").val();
     let imageUrl = $("#about-img-url").val();
-    let description = $("#about-description").val();
+    let description = $("#bf-about-description").val();
+    console.log($("#bf-description").val());
     $("#about-store").find(":input").val("");
     set(ref(db, "aboutStore/"), {
+        description,
         titleName,
         imageUrl,
-        description,
     });
 });
 
 const aboutStore = ref(db, "aboutStore/");
 onValue(aboutStore, (snapshot) => {
     const data = snapshot.val();
-
+    console.log(data);
     $("#about-title").text(data.titleName);
     $("#about-description").text(data.description);
     $("#about-img").attr("src", data.imageUrl);
 });
-
 /* 
 
 
-        ABOUT STORE
+        BOOK FORM & ADD NEW BOOK
 
 
 */
-
-// ==============
-// ADD NEW BOOK
-// ==============
-$("#about-btn").on("click", function(e) {
-    let titleName = $("#about-name").val();
-    let imageUrl = $("#about-img-url").val();
-    let description = $("#about-description").val();
-    $("#about-store").find(":input").val("");
+$("#bf-add-btn").on("click", function(e) {
+    let bookName = $("#bf-book-name").val();
+    let authorName = $("#bf-author-name").val();
+    let imageUrl = $("#bf-image-url").val();
+    let description = $("#bf-description").val();
+    let bookType = $("#bf-book-type").val();
+    $("#book-form").find(":input").val("");
     var objKey = push(ref(db, "/")).key;
-    set(ref(db, "aboutStore/" + objKey), {
-        titleName,
+    set(ref(db, "newBooks/" + objKey), {
+        bookName,
+        authorName,
         imageUrl,
         description,
+        bookType,
     });
 });

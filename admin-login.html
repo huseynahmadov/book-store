@@ -13,29 +13,32 @@
 </head>
 
 <body>
-    <section class="login-section">
+    <section class="login-section container-fluid mt-2">
         <div class="row mt-lg-5 mt-md-5 mt-sm-5 mx-lg-5 mx-md-5 mx-sm-5">
-            <div class="col-3">
-                <img src="./assets/images/footer-logo.png" />
+            <div class="col-4">
+                <img src="./assets/images/footer-logo.png" class="img-fluid" alt="logo" />
             </div>
         </div>
 
         <div class="row mt-5 animation-row">
             <div class="container">
-                <div class="col-12">
+                <div class="col-12 col-sm-12 col-md-12">
                     <div class="login">
                         <img class="myGif" src="" />
-                        <div class="container login-container">
+                        <div class="login-container">
                             <div>Welcome Admin</div>
                             <div class="inputs">
                                 <input class="username" type="email" placeholder="Email" />
-                                <p id="email-error-message"></p>
+                                <small id="email-error-message">&nbsp;</small>
                                 <input class="password" type="password" placeholder="Password" />
-                                <small id="password-error-message"></small>
+                                <small id="password-error-message">&nbsp;</small>
                                 <button class="join" type="submit ">Join</button>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
