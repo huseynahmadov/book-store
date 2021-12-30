@@ -61,3 +61,7 @@ $("#searchBook").on("click", function () {
     }
   });
 });
+
+$("#title-choices").on("click", function () {
+  console.log("Ishledi");
+});
