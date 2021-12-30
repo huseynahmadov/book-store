@@ -34,50 +34,48 @@ let clearAllBook = function (emptyDiv, bookType) {
             </div>
         </div>`);
 
-                $(emptyDiv).append(newBook);
-            }
-        }
-        $(document).ready(function() {
-            $(emptyDiv).slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: true,
+        $(emptyDiv).append(newBook);
+      }
+    }
+    $(document).ready(function () {
+      $(emptyDiv).slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
 
-                responsive: [{
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        },
-                    },
-                    {
-                        breakpoint: 1008,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        },
-                    },
-                    {
-                        breakpoint: 800,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        },
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 1008,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
 
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    },
-                ],
-            });
-
-        
-        });
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      });
     });
   });
 };
@@ -162,24 +160,24 @@ $("#fantastic").on("click", function () {
   $("#fantastic-slick").removeClass("d-none");
 });
 
-$(document).on("click", ".read-more", function() {
-    $(".catalog-section").addClass("d-none");
-    $(".read-more-section").removeClass("d-none");
+$(document).on("click", ".read-more", function () {
+  $(".catalog-section").addClass("d-none");
+  $(".read-more-section").removeClass("d-none");
 
-    const readMore = ref(db, "newBooks/");
-    onValue(readMore, (snapshot) => {
-        const allInfos = snapshot.val();
-        for (let result in allInfos) {
-            let infos = allInfos[result];
-            if ($(this).data("name") === infos.bookName) {
-                $("#book-name").text(infos.bookName);
-                $("#author-name").text(infos.authorName);
-                $(".book-img").attr("src", infos.imageUrl);
-                $("#public-year").text(infos.publicYear);
-                $("#introduction").text(infos.description);
-            }
-        }
-    });
+  const readMore = ref(db, "newBooks/");
+  onValue(readMore, (snapshot) => {
+    const allInfos = snapshot.val();
+    for (let result in allInfos) {
+      let infos = allInfos[result];
+      if ($(this).data("name") === infos.bookName) {
+        $("#book-name").text(infos.bookName);
+        $("#author-name").text(infos.authorName);
+        $(".book-img").attr("src", infos.imageUrl);
+        $("#public-year").text(infos.publicYear);
+        $("#introduction").text(infos.description);
+      }
+    }
+  });
 });
 
 $(".back-btn").on("click", function () {
