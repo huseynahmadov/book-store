@@ -37,7 +37,6 @@ $(document).on("click", "#searchBook", function() {
     //
     var value = $("#title").val();
     var result = dataBook[value];
-    console.log(result);
     if (!value || result === undefined) {
         $("#display-alert").removeClass("d-none");
         return;

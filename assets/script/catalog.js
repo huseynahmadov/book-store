@@ -37,6 +37,7 @@ let clearAllBook = function(emptyDiv, bookType) {
                 $(emptyDiv).append(newBook);
             }
         }
+
         $(document).ready(function() {
             $(emptyDiv).slick({
                 infinite: true,
@@ -45,7 +46,6 @@ let clearAllBook = function(emptyDiv, bookType) {
                 autoplay: true,
                 autoplaySpeed: 3000,
                 arrows: true,
-
                 responsive: [{
                         breakpoint: 1200,
                         settings: {
@@ -70,7 +70,9 @@ let clearAllBook = function(emptyDiv, bookType) {
                         breakpoint: 600,
                         settings: {
                             slidesToShow: 1,
-                            slidesToScroll: 1
+                            slidesToScroll: 1,
+                            fade: true,
+
                         }
                     },
                 ],
