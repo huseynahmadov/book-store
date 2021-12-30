@@ -45,7 +45,38 @@ let clearAllBook = function(emptyDiv, bookType) {
                 autoplay: true,
                 autoplaySpeed: 3000,
                 arrows: true,
+
+                responsive: [{
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        },
+                    },
+                    {
+                        breakpoint: 1008,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        },
+                    },
+                    {
+                        breakpoint: 800,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        },
+
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                ],
             });
+
+
         });
     });
 };
@@ -143,6 +174,7 @@ $(document).on("click", ".read-more", function() {
                 $("#book-name").text(infos.bookName);
                 $("#author-name").text(infos.authorName);
                 $(".book-img").attr("src", infos.imageUrl);
+                $("#public-year").text(infos.publicYear)
             }
         }
     });

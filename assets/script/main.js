@@ -203,7 +203,6 @@ $("#about-btn").on("click", function(e) {
     let titleName = $("#about-name").val();
     let imageUrl = $("#about-img-url").val();
     let description = $("#bf-about-description").val();
-    console.log($("#bf-description").val());
     $("#about-store").find(":input").val("");
     set(ref(db, "aboutStore/"), {
         description,
@@ -215,7 +214,6 @@ $("#about-btn").on("click", function(e) {
 const aboutStore = ref(db, "aboutStore/");
 onValue(aboutStore, (snapshot) => {
     const data = snapshot.val();
-    console.log(data);
     $("#about-title").text(data.titleName);
     $("#about-description").text(data.description);
     $("#about-img").attr("src", data.imageUrl);
@@ -227,12 +225,14 @@ onValue(aboutStore, (snapshot) => {
 
 
 */
+console.log($("bf-public-year").val())
 $("#bf-add-btn").on("click", function(e) {
     let bookName = $("#bf-book-name").val();
     let authorName = $("#bf-author-name").val();
     let imageUrl = $("#bf-image-url").val();
     let description = $("#bf-description").val();
     let bookType = $("#bf-book-type").val();
+    let publicYear = $("#bf-public-year").val();
     $("#book-form").find(":input").val("");
     var objKey = push(ref(db, "/")).key;
     set(ref(db, "newBooks/" + objKey), {
@@ -241,5 +241,6 @@ $("#bf-add-btn").on("click", function(e) {
         imageUrl,
         description,
         bookType,
+        publicYear,
     });
 });
