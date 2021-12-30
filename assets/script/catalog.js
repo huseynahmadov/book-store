@@ -27,7 +27,7 @@ let clearAllBook = function(emptyDiv, bookType) {
             <div class="card shadow p-3 rounded" style="width: 15rem; ">
                 <img class="card-img-top img-fluid " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
                 <div class="card-body ">
-                    <h5 class="card-title text-center book-name" style="width:100%; height:90px">${books.bookName}</h5>
+                    <h5 class="card-title text-center book-name" height:90px">${books.bookName}</h5>
                     <p class="card-text text-center " style="height:90px">${books.authorName}</p>
                     <button class="btn btn-primary read-more" data-name="${books.bookName}">Read more</button>
                 </div>
@@ -174,7 +174,8 @@ $(document).on("click", ".read-more", function() {
                 $("#book-name").text(infos.bookName);
                 $("#author-name").text(infos.authorName);
                 $(".book-img").attr("src", infos.imageUrl);
-                $("#public-year").text(infos.publicYear)
+                $("#public-year").text(infos.publicYear);
+                $("#introduction").text(infos.description);
             }
         }
     });

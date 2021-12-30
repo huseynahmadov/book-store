@@ -104,8 +104,14 @@ Navbar
 }
 
 .join-span {
-    font-family: var(--fontRoboto);
+    font-family: var(--fontMontserrat);
     font-size: 14px;
+    transition: font-size 0.5s ease;
+    font-weight: 600;
+}
+
+.join-span:hover {
+    font-size: 16px;
 }
 
 .navbar-brand {
@@ -113,7 +119,14 @@ Navbar
 }
 
 .nav-link {
-    font-size: 12px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: font-size 0.5s ease;
+}
+
+.nav-link:hover {
+    font-size: 16px;
 }
 
 .read-more-section {
