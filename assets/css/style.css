@@ -8,6 +8,25 @@
     }
 }
 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.catalog-section {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+header {
+    animation: fadeInAnimation ease 1.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 .types::-webkit-scrollbar {
     height: 10px;
 }
@@ -107,7 +126,7 @@ Navbar
     font-family: var(--fontMontserrat);
     font-size: 14px;
     transition: font-size 0.5s ease;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .join-span:hover {
@@ -289,5 +308,11 @@ Catalog section
     }
     .icon {
         width: 20%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .type-list {
+        margin-left: 90%;
     }
 }

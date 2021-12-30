@@ -27,8 +27,8 @@ let clearAllBook = function(emptyDiv, bookType) {
             <div class="card shadow p-3 rounded" style="width: 15rem; ">
                 <img class="card-img-top img-fluid " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
                 <div class="card-body ">
-                    <h5 class="card-title text-center book-name" height:90px">${books.bookName}</h5>
-                    <p class="card-text text-center " style="height:90px">${books.authorName}</p>
+                    <h5 class="card-title text-center book-name" style="height:120px">${books.bookName}</h5>
+                    <p class="card-text text-center " style="height: 70px">${books.authorName}</p>
                     <button class="btn btn-primary read-more" data-name="${books.bookName}">Read more</button>
                 </div>
             </div>
@@ -56,14 +56,14 @@ let clearAllBook = function(emptyDiv, bookType) {
                     {
                         breakpoint: 1008,
                         settings: {
-                            slidesToShow: 1,
+                            slidesToShow: 2,
                             slidesToScroll: 1,
                         },
                     },
                     {
                         breakpoint: 800,
                         settings: {
-                            slidesToShow: 1,
+                            slidesToShow: 2,
                             slidesToScroll: 1
                         },
 
