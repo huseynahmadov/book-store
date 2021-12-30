@@ -27,25 +27,57 @@ let clearAllBook = function (emptyDiv, bookType) {
             <div class="card shadow p-3 rounded" style="width: 15rem; ">
                 <img class="card-img-top img-fluid " src="${books.imageUrl}" alt="Card image cap " style="height: 200px; ">
                 <div class="card-body ">
-                    <h5 class="card-title text-center book-name" style="width:100%; height:90px">${books.bookName}</h5>
-                    <p class="card-text text-center " style="height:90px">${books.authorName}</p>
+                    <h5 class="card-title text-center book-name" style="height:120px">${books.bookName}</h5>
+                    <p class="card-text text-center " style="height: 70px">${books.authorName}</p>
                     <button class="btn btn-primary read-more" data-name="${books.bookName}">Read more</button>
                 </div>
             </div>
         </div>`);
 
-        $(emptyDiv).append(newBook);
-      }
-    }
-    $(document).ready(function () {
-      $(emptyDiv).slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        arrows: true,
-      });
+                $(emptyDiv).append(newBook);
+            }
+        }
+        $(document).ready(function() {
+            $(emptyDiv).slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+
+                responsive: [{
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        },
+                    },
+                    {
+                        breakpoint: 1008,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        },
+                    },
+                    {
+                        breakpoint: 800,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        },
+
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                ],
+            });
+
+        
+        });
     });
   });
 };
@@ -130,22 +162,24 @@ $("#fantastic").on("click", function () {
   $("#fantastic-slick").removeClass("d-none");
 });
 
-$(document).on("click", ".read-more", function () {
-  $(".catalog-section").addClass("d-none");
-  $(".read-more-section").removeClass("d-none");
+$(document).on("click", ".read-more", function() {
+    $(".catalog-section").addClass("d-none");
+    $(".read-more-section").removeClass("d-none");
 
-  const readMore = ref(db, "newBooks/");
-  onValue(readMore, (snapshot) => {
-    const allInfos = snapshot.val();
-    for (let result in allInfos) {
-      let infos = allInfos[result];
-      if ($(this).data("name") === infos.bookName) {
-        $("#book-name").text(infos.bookName);
-        $("#author-name").text(infos.authorName);
-        $(".book-img").attr("src", infos.imageUrl);
-      }
-    }
-  });
+    const readMore = ref(db, "newBooks/");
+    onValue(readMore, (snapshot) => {
+        const allInfos = snapshot.val();
+        for (let result in allInfos) {
+            let infos = allInfos[result];
+            if ($(this).data("name") === infos.bookName) {
+                $("#book-name").text(infos.bookName);
+                $("#author-name").text(infos.authorName);
+                $(".book-img").attr("src", infos.imageUrl);
+                $("#public-year").text(infos.publicYear);
+                $("#introduction").text(infos.description);
+            }
+        }
+    });
 });
 
 $(".back-btn").on("click", function () {

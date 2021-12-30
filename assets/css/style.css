@@ -8,6 +8,25 @@
     }
 }
 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.catalog-section {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+header {
+    animation: fadeInAnimation ease 1.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 .types::-webkit-scrollbar {
     height: 10px;
 }
@@ -104,8 +123,14 @@ Navbar
 }
 
 .join-span {
-    font-family: var(--fontRoboto);
+    font-family: var(--fontMontserrat);
     font-size: 14px;
+    transition: font-size 0.5s ease;
+    font-weight: 500;
+}
+
+.join-span:hover {
+    font-size: 16px;
 }
 
 .navbar-brand {
@@ -113,7 +138,14 @@ Navbar
 }
 
 .nav-link {
-    font-size: 12px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: font-size 0.5s ease;
+}
+
+.nav-link:hover {
+    font-size: 16px;
 }
 
 .read-more-section {
@@ -243,6 +275,17 @@ Header, icons
 ===============================
 */
 
+
+/* 
+===============================
+Catalog section
+===============================
+*/
+
+.type-list li {
+    margin-left: 10%;
+}
+
 @media screen and (max-width: 992px) {
     .navbar-toggler {
         margin-left: auto;
@@ -265,5 +308,11 @@ Header, icons
     }
     .icon {
         width: 20%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .type-list {
+        margin-left: 90%;
     }
 }
