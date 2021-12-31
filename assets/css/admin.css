@@ -30,6 +30,9 @@ a {
   text-decoration: none !important;
 }
 
+textarea {
+  resize: none !important;
+}
 .btn {
   background: #e16a00 !important;
   border: none;
