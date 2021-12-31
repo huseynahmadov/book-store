@@ -1,172 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
     <link rel="stylesheet" href="./assets/css/admin.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;1,300&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="./assets/css/sidebar.css" />
-</head>
+    <link rel="stylesheet" href="test.css" />
+    <!--Google fonts--> 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;1,300&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <div class="sideIcon">
-            <img src="./assets/images/icon.png" alt="" />
-            <a href="#book-form">Home</a>
+  <body>
+    <div class="wrapper">
+      <div class="section">
+        <div class="top_navbar">
+          <div class="hamburger">
+            <a href="#">
+              <i class="fas fa-bars"></i>
+            </a>
+          </div>
         </div>
-        <div class="sideIcon">
-            <img src="./assets/images/icon.png" alt="" />
-            <a href="#about-store">About</a>
+
+      <div class="sidebar">
+        <div class="logo-container">
+          <img src="./assets/images/footer-logo.png" alt="logo">
         </div>
-        <div class="sideIcon">
-            <img src="./assets/images/icon.png" alt="" />
-            <a href="#join-us-section">Join Us</a>
-        </div>
-        <div class="sideIcon">
-            <img src="./assets/images/icon.png" alt="" />
-            <a href="#contact-us-section">Contact</a>
-        </div>
-        <div class="sideIcon" class="log-out-class">
-            <img src="./assets/images/icon.png" alt="" />
-            <a id="log-out" href="#">Log out</a>
-        </div>
+        <ul>
+          <li>
+            <a href="#" class="active">
+              <span class="icon"><i class="fas fa-home"></i></span>
+              <span class="item" href="#book-form" title="">Home</span>
+            </a>
+          </li> 
+          <li>
+            <a href="#about-store">
+              <span class="icon"><i class="fas fa-desktop"></i></span>
+              <span class="item"  title="">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="#join-us-section">
+              <span class="icon"><i class="fas fa-user-friends"></i></span>
+              <span class="item" >Join Us</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact-us-section">
+              <span class="icon"><i class="far fa-address-book"></i></span>
+              <span class="item" >Contact Us</span>
+            </a>
+          </li>
+          <li>
+            <a id="log-out"  href="#">
+              <span class="icon"><i class="fas fa-sign-out-alt"></i></i></span>
+              <span class="item" >Log out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div id="main">
-        <button class="openbtn" onclick="openNav()">☰</button>
-    </div>
-    <section id="search-book">
-        <div class="container">
-            <p class="section-title">Add Book</p>
-            <p class="section-title-addbook">Search Book</p>
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-6 p-0 m-0">
-                    <div class='row'>
-                        <div class='col-12 col-sm-12 col-md-12 col-lg-12 p-0 m-0'>
-                            <input id="admin-search" type="text" class="form-control w-100" placeholder=" Username" aria-label="Username" aria-describedby="addon-wrapping" list="title-choices">
-                        </div>
 
-                        <div id="searchAdminResult" class="d-none shadow rounded-35 col-12 col-sm-12 col-md-12 col-lg-12 p-0 mt-2">
-                            <div id="search-result-list"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-    </section>
-    <section class="book-form" id="book-form">
-        <div class="container">
-            <p class="section-title-addbook">Book form</p>
-            <div class="inputs">
-                <label for="book-name">Book Name</label>
-                <input class="book-name" type="text" id="bf-book-name" />
-                <label for="author-name">Author Name</label>
-                <input class="author-name" type="text" id="bf-author-name" />
-                <label for="book-image-url">Book Image Url</label>
-                <input class="book-img-url" type="text" id="bf-image-url" />
-                <label for="description">Description</label>
-                <textarea class="description" cols="30" rows="10" id="bf-description"></textarea>
-                <label for="book-type">Book Type</label>
-                <input class="book-type" type="text" id="bf-book-type" />
-                <label for="book-type">Publication Year</label>
-                <input class="book-publication" type="number" id="bf-public-year" />
-                <button class="add-btn" id="bf-add-btn">Add</button>
-            </div>
-    </section>
-    <section class="about-store" id="about-store">
-        <div class="container">
-            <p class="section-title">About Store</p>
-            <div class="inputs">
-                <label for="title">Title</label>
-                <input class="title" type="text" id="about-name" />
-                <label for="book-image-url">Book Image Url</label>
-                <input class="book-image-url" type="text" id="about-img-url" />
-                <label for="description">Description</label>
-                <textarea class="description" cols="30" rows="10" id="bf-about-description"></textarea>
-                <button class="add-btn" id="about-btn">About info add</button>
-            </div>
+    <div class="container">
+      <section class="row" id="search-book">
+        <p class="col-12 section-title">Add Book</p>
+        <p class="col-12 form-title">Search Book</p>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 m-0">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 p-0 m-0">
+            <input
+              id="admin-search"
+              type="text"
+              class="form-control w-100"
+              placeholder="Enter book"
+            />
+          </div>
+          <div
+            id="searchAdminResult"
+            class="
+              d-none
+              shadow
+              rounded
+              col-12 col-sm-12 col-md-12 col-lg-12
+              p-0
+              mt-2
+            "
+          >
+            <div id="search-result-list"></div>
+          </div>
         </div>
-    </section>
-    <section class="join-us-section" id="join-us-section">
-        <div class="container">
-            <p class="section-title">Join Us</p>
-            <table class="table table-striped table-Light" style="width: 512px">
-                <thead class="text-white" style="background-color: #720418">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody id="join-us-infos">
-                    <!-- <tr>
+      </section>
+      <!-- 
+          Home section add new book
+        -->
+      <section id='book-form'>
+        <h1 class="section-title">Home</h1>
+        <form>
+          <p class="form-title">Book Form</p>
+          <div class="form-group">
+            <label>Book name</label>
+            <input type="email" class="form-control" id="bf-book-name" />
+          </div>
+          <div class="form-group">
+            <label>Author name</label>
+            <input type="email" class="form-control" id="bf-author-name" />
+          </div>
+          <div class="form-group">
+            <label>Book Image Url</label>
+            <input type="email" class="form-control" id="bf-image-url" />
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input type="email" class="form-control" id="bf-description" />
+          </div>
+          <div class="form-group">
+            <label>Book Type</label>
+            <input type="email" class="form-control" id="bf-book-type" />
+          </div>
+          <div class="form-group">
+            <label>Publication Year</label>
+            <input type="email" class="form-control" id="bf-public-year" />
+          </div>
+          <button class="btn btn-primary w-100" id="bf-add-btn">Add</button>
+        </form>
+      </section>
+      <!-- 
+          About Store section
+        -->
+      <section id='about-store'>
+        <h1 class="section-title">About Store</h1>
+        <form>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" id="about-name" />
+          </div>
+          <div class="form-group">
+            <label>Book Image Url</label>
+            <input type="text" class="form-control" id="about-img-url" />
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea
+              type="text"
+              class="form-control"
+              id="bf-about-description"
+            ></textarea>
+          </div>
+          <button class="btn btn-primary w-100" id="bf-add-btn">Add</button>
+        </form>
+      </section>
+      <!-- 
+          Join-us section
+        -->
+      <section class="join-us-section" id="join-us-section">
+        <p class="section-title">Join Us</p>
+        <div class="table-responsive">
+        
+        <table class="table table-striped table-Light" style="width: 512px">
+          <thead class="text-white" style="background-color: #720418">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody id="join-us-infos">
+            <!-- <tr>
               <th scope="row">1</th>
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
             </tr> -->
-                </tbody>
-            </table>
+          </tbody>
+        </table>
         </div>
-    </section>
-    <section class="contact-us-section" id="contact-us-section">
+      </section>
+        <!-- 
+          "Contact-us-section
+        -->
+      <section id="contact-us-section">
+        <p class="section-title">Contact us</p>
+        <div class="table-responsive">
+        <table class="table table-striped table-Light">
+          <thead class="text-white" style="background-color: #720418">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Phone</th>
+            </tr>
+          </thead>
+          <tbody id="contact-infos">
+            <!-- <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+      </section>
 
-        <input type="number" id="send-infos">
-        <button id="send">send</button>
-        <div class="container">
-            <p class="section-title">Contact us</p>
-            <table class="table table-striped table-Light">
-                <thead class="text-white" style="background-color: #720418">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Surname</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Phone</th>
-                    </tr>
-                </thead>
-                <tbody id="contact-infos">
-                    <!-- <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr> -->
-                </tbody>
-            </table>
-        </div>
-    </section>
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Local Js -->
     <script type="module" src="./assets/script/main.js"></script>
     <script type="module" src="./assets/script/admin.js"></script>
-    <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-            document.getElementById("main").style.marginRight = "250px";
-            document.getElementById("main").classList.add("visibilityHidden");
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginRight = "0";
-            document.getElementById("main").classList.remove("visibilityHidden");
-        }
-    </script>
-
     <script src="./assets/script/auth.js"></script>
-</body>
-
+  </body>
 </html>

@@ -56,8 +56,10 @@ const searchBook = function() {
     let value = $("#title").val();
     onValue(getPath, (snapshot) => {
         let data = snapshot.val();
+
         $("#title-choices").empty();
         $("#books").empty();
+
         for (let book in data) {
             let obj = data[book];
             if (!value || obj === undefined) {
@@ -69,7 +71,7 @@ const searchBook = function() {
                 $("#books").append(`
         <div class="card rounded" >
           <img src="${obj.imageUrl}"  class="card-img-top img-fluid rounded" alt="${obj.bookName}" >
-          <div class="card-body text-center rounded">
+          <div class="card-body text-center rounded" >
             <p class="card-title">${obj.bookName}</p>
             <p class="card-text">${obj.authorName}.</p>
             <a href="#" class="btn btn-primary read-more-btn">Read more</a>

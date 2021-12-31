@@ -1,54 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
-      crossorigin="anonymous"
-    />
-  </head>
-  <!-- Css -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/search.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+</head>
+<!-- Css -->
+<link rel="stylesheet" href="./assets/css/style.css" />
+<link rel="stylesheet" href="./assets/css/search.css" />
 
-  <body>
-    <header
-      class="position-fixed fixed-top bg-white"
-      style="border-bottom: 2px solid whitesmoke"
-    >
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light mt-3 px-0">
-          <a class="navbar-brand" href="index.html">
-            <img src="./assets/images/logo.png" alt="logo" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+<body>
+    <header class="position-fixed fixed-top bg-white" style="border-bottom: 2px solid whitesmoke">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light mt-3 px-0">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./assets/images/logo.png" alt="logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav w-100 justify-content-center">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="catalog.html">Catalog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="about-store.html"
-                  >About Store</a
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="catalog.html">Catalog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="about-store.html">About Store</a
                 >
               </li>
               <li class="nav-item">
@@ -175,7 +159,7 @@
             </button>
           </div>
           <!-- If book is not found display alert message -->
-          <div class="col-12 col-sm-12 col-md-7 p-4">
+          <div class="col-12 col-md-7 p-4">
             <div
               class="alert alert-danger d-none"
               id="display-alert"
@@ -207,7 +191,13 @@
       <!-- Main-container -->
     </main>
     <div class="container height-vh mt-5 pt-5 pl-0 books-container">
-      <div class="pl-0" id="books"></div>
+      <div class="row">
+        <div class="col-12 books-col">
+          <div id="books"></div>
+
+        </div>
+
+      </div>
     </div>
 
     <footer class="row m-0">
