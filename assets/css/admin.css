@@ -160,7 +160,9 @@ Sidebar menu
   font-size: 16px;
   position: relative;
 }
-
+#log-out {
+  border-bottom: none !important;
+}
 .wrapper .sidebar ul li a .icon {
   color: #dee4ec;
   width: 30px;

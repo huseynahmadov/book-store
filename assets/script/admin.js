@@ -1,7 +1,7 @@
 // =================================
 // Hamburger menu
 // =================================
-var hamburger = document.querySelector(".hamburger");
+const hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener("click", function () {
   document.querySelector("body").classList.toggle("active");
 });
@@ -9,9 +9,9 @@ hamburger.addEventListener("click", function () {
 // =================================
 // Get and Set data
 // =================================
-var dataBook = {};
+let dataBook = {};
 
-var interval;
+let interval;
 
 $("#admin-search").on("input", function () {
   $("#searchAdminResult").removeClass("d-none");
@@ -19,7 +19,7 @@ $("#admin-search").on("input", function () {
   if ($("#admin-search").val().length === 0) {
     $("#searchAdminResult").addClass("d-none");
   }
-  var value = $(this).val();
+  let value = $(this).val();
 
   clearInterval(interval);
 
