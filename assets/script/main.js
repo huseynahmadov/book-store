@@ -47,8 +47,6 @@ join.on("click", function (e) {
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      console.log("user logged in:", userCredential.user);
-
       localStorage.setItem("user", JSON.stringify(userCredential));
 
       document.querySelector(".login-container").classList.add("d-none");

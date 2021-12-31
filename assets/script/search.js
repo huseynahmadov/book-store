@@ -56,8 +56,10 @@ const searchBook = function () {
   let value = $("#title").val();
   onValue(getPath, (snapshot) => {
     let data = snapshot.val();
+
     $("#title-choices").empty();
     $("#books").empty();
+
     for (let book in data) {
       let obj = data[book];
       if (!value || obj === undefined) {
