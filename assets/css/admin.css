@@ -26,6 +26,10 @@ body {
   background-color: #e5e5e5;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .btn {
   background: #e16a00 !important;
   border: none;
@@ -97,10 +101,6 @@ Search book section
 #search-result-list div {
   margin-bottom: 25px;
   cursor: pointer;
-}
-
-#search-result-list div:hover {
-  text-decoration: underline;
 }
 
 /* 
@@ -211,7 +211,7 @@ Sidebar menu
 }
 
 .wrapper .section .top_navbar .hamburger a:hover {
-  color: #a2ecff;
+  color: #f8e1e4 !important;
 }
 
 .wrapper .section .container {
