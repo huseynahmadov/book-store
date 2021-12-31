@@ -15,6 +15,7 @@
   </head>
   <!-- Css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/search.css" />
 
   <body>
     <header
@@ -151,9 +152,9 @@
     <!-- Main section -->
     <main class="my-5 pt-5 text-main">
       <div class="container height-vh mt-5 pt-5">
-        <div class="row justify-content-between">
+        <div class="row justify-content-between pl-0">
           <!-- Search section -->
-          <div class="col-12 col-sm-12 col-md-4 p-4">
+          <div class="col-12 col-sm-12 col-md-4 pl-0">
             <h2 class="h2 font-weight-bolder">Search</h2>
             <input
               type="text"
@@ -183,8 +184,8 @@
               The book was not found. Please try again
             </div>
             <!-- Example book information-->
-            <div class="row justify-content-around">
-              <!-- Example book image-->
+            <!-- <div class="row justify-content-around">
+              Example book image
               <div class="col-12 col-sm-12 col-md-5 col-lg-5 mb-2">
                 <img
                   src=""
@@ -192,23 +193,21 @@
                   class="img-fluid w-100 rounded"
                   id="book-img"
                 />
-              </div>
+              </div> -->
               <!-- About Book -->
-              <div class="col-12 col-sm-12 col-md-12 col-lg-7">
+              <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-7">
                 <h3 class="h3" id="book-name"></h3>
                 <p id="author-name"></p>
                 <p id="introduction"></p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
       <!-- Main-container -->
     </main>
-    <div class="container height-vh mt-5 pt-5">
-      <div class="row justify-content-between">
-        <div class="col-12 col-sm-12 col-md-4 p-4" id="books"></div>
-      </div>
+    <div class="container height-vh mt-5 pt-5 pl-0 books-container">
+      <div class="pl-0" id="books"></div>
     </div>
 
     <footer class="row m-0">

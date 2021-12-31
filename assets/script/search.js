@@ -18,6 +18,7 @@ const firebaseApp = initializeApp({
 
 const db = getDatabase();
 const getPath = ref(db, "newBooks/");
+let value = $("#title").val();
 
 let interval;
 
@@ -32,36 +33,64 @@ $("#title").on("input", function() {
 
             for (let book in data) {
                 let obj = data[book];
+
                 $("#title-choices").append(`
         <option>${obj.bookName}</option>
         `);
             }
         });
-    }, 500);
+    }, 700);
 });
 
 $("#searchBook").on("click", function() {
+    searchBook();
+});
+
+$(document).keypress(function(e) {
+    if (e.keyCode == "13" && $(".form-control").is(":focus")) {
+        searchBook();
+    }
+});
+
+const searchBook = function() {
     let value = $("#title").val();
     onValue(getPath, (snapshot) => {
         let data = snapshot.val();
         $("#title-choices").empty();
-
+        $("#books").empty();
         for (let book in data) {
             let obj = data[book];
-
             if (!value || obj === undefined) {
                 $("#display-alert").removeClass("d-none");
                 return;
-            } else if (obj.bookName == value) {
+            } else if (obj.bookName.toLowerCase().includes(value.toLowerCase())) {
                 $("#display-alert").addClass("d-none");
-                $("#book-img").attr("src", obj.imageUrl);
-                $("#book-name").text(obj.bookName);
-                $("#author-name").text(obj.authorName);
+
+                $("#books").append(`
+        <div class="card rounded" >
+          <img src="${obj.imageUrl}"  class="card-img-top img-fluid rounded" alt="${obj.bookName}" >
+          <div class="card-body text-center rounded">
+            <p class="card-title">${obj.bookName}</p>
+            <p class="card-text">${obj.authorName}.</p>
+            <a href="#" class="btn btn-primary read-more-btn">Read more</a>
+          </div>
+        </div>
+        `);
             }
         }
     });
-});
+};
 
-$("#title-choices").on("click", function() {
-    console.log("Ishledi");
-});
+// obj.bookName == value
+// $("#display-alert").addClass("d-none");
+// $("#book-img").attr("src", obj.imageUrl);
+// $("#book-name").text(obj.bookName);
+// $("#author-name").text(obj.authorName);
+
+// {
+//   /* <img src="${obj.imageUrl} /">
+// <div>${obj.bookName}</div>
+// <div>${obj.authorName}</div>
+// <button class="btn btn-primary">Read more</button> */
+// }
+//////////////////
