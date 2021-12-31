@@ -1,3 +1,14 @@
+// =================================
+// Hamburger menu
+// =================================
+var hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener("click", function () {
+  document.querySelector("body").classList.toggle("active");
+});
+
+// =================================
+// Get and Set data
+// =================================
 var dataBook = {};
 
 var interval;
