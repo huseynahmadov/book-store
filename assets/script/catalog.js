@@ -180,5 +180,6 @@ $(document).on("click", ".read-more", function() {
 });
 
 $(".back-btn").on("click", function() {
-    window.location = "./catalog.html";
+    $(".catalog-section").removeClass("d-none");
+    $(".read-more-section").addClass("d-none");
 });
