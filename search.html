@@ -134,9 +134,9 @@
     </div>
 
     <!-- Main section -->
-    <main class="my-5 pt-5 text-main">
+    <main class="my-5 pt-5 text-main books-section">
       <div class="container height-vh mt-5 pt-5">
-        <div class="row justify-content-between pl-0">
+        <div class="row justify-content-between pl-3">
           <!-- Search section -->
           <div class="col-12 col-sm-12 col-md-4 pl-0">
             <h2 class="h2 font-weight-bolder">Search</h2>
@@ -188,17 +188,44 @@
           </div>
         </div>
       </div>
+
+      <div class="container height-vh mt-5 pt-5 pl-0 books-container">
+        <div class="row">
+          <div class="col-12 books-col">
+            <div id="books"></div>
+  
+          </div>
+  
+        </div>
+      </div>
       <!-- Main-container -->
     </main>
-    <div class="container height-vh mt-5 pt-5 pl-0 books-container">
-      <div class="row">
-        <div class="col-12 books-col">
-          <div id="books"></div>
+    
 
-        </div>
+     <!--READ MORE-->
 
+     <main class="my-5 pt-5 text-main d-none read-more-section">
+      <div class="container height-vh mt-5 pt-5">
+          <div class="row justify-content-around">
+              <div class="col-sm-12 col-md-5">
+                  <button class="btn back-btn" style="color: #fff; background-color: var(--mainColorOrange)" id="back-to-previous-ection">
+            ← back
+          </button>
+                  <div class="mt-5">
+                      <span class="badge badge-primary" id="public-year"></span>
+                  </div>
+                  <h3 class="h3" id="book-name"></h3>
+                  <p id="author-name"></p>
+                  <p id="introduction"></p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                  <img src="" alt="book" class="img-fluid d-block ml-auto book-img rounded" style="height: 661px" />
+              </div>
+          </div>
       </div>
-    </div>
+
+      <!-- READ MORE SECTION END -->
+  </main>
 
     <footer class="row m-0">
       <div class="col-md-12">

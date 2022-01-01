@@ -74,7 +74,7 @@ const searchBook = function() {
           <div class="card-body text-center rounded" >
             <p class="card-title">${obj.bookName}</p>
             <p class="card-text">${obj.authorName}.</p>
-            <a href="#" class="btn btn-primary read-more-btn">Read more</a>
+            <a href="#" class="btn btn-primary read-more-btn" data-name="${obj.bookName}">Read more</a>
           </div>
         </div>
         `);
@@ -82,6 +82,32 @@ const searchBook = function() {
         }
     });
 };
+
+$(document).on("click", ".read-more-btn", function() {
+    $(".books-section").addClass("d-none");
+    $(".read-more-section").removeClass("d-none");
+
+    const readMore = ref(db, "newBooks/");
+    onValue(readMore, (snapshot) => {
+        const allInfos = snapshot.val();
+        for (let result in allInfos) {
+            let infos = allInfos[result];
+            if ($(this).data("name") === infos.bookName) {
+                $("#book-name").text(infos.bookName);
+                $("#author-name").text(infos.authorName);
+                $(".book-img").attr("src", infos.imageUrl);
+                $("#public-year").text(infos.publicYear);
+                $("#introduction").text(infos.description);
+            }
+        }
+    });
+});
+
+$(".back-btn").on("click", function() {
+    $(".books-section").removeClass("d-none");
+    $(".read-more-section").addClass("d-none");
+});
+
 
 // obj.bookName == value
 // $("#display-alert").addClass("d-none");
