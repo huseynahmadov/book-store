@@ -138,16 +138,21 @@ Navbar
 }
 
 .nav-link {
-    margin-left: 20px;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     transition: font-size 0.5s ease;
 }
 
-.nav-link:hover {
-    font-size: 15px;
-}
+
+/* 
+================================
+Navbar Hover
+================================
+*/
+
+
+/*  */
 
 .read-more-section {
     animation: fadeInAnimation ease 1.3s;

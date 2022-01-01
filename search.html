@@ -11,6 +11,7 @@
 </head>
 <!-- Css -->
 <link rel="stylesheet" href="./assets/css/style.css" />
+<link rel="stylesheet" href="./assets/css/search.css" />
 
 <body>
     <header class="position-fixed fixed-top bg-white" style="border-bottom: 2px solid whitesmoke">
@@ -133,11 +134,11 @@
     </div>
 
     <!-- Main section -->
-    <main class="my-5 pt-5 text-main">
+    <main class="my-5 pt-5 text-main books-section">
       <div class="container height-vh mt-5 pt-5">
-        <div class="row justify-content-between">
+        <div class="row justify-content-between pl-0">
           <!-- Search section -->
-          <div class="col-12 col-sm-12 col-md-4 p-4">
+          <div class="col-12 col-sm-12 col-md-4 pl-0">
             <h2 class="h2 font-weight-bolder">Search</h2>
             <input
               type="text"
@@ -158,7 +159,7 @@
             </button>
           </div>
           <!-- If book is not found display alert message -->
-          <div class="col-12 col-sm-12 col-md-7 p-4">
+          <div class="col-12 col-md-7 p-4">
             <div
               class="alert alert-danger d-none"
               id="display-alert"
@@ -167,8 +168,8 @@
               The book was not found. Please try again
             </div>
             <!-- Example book information-->
-            <div class="row justify-content-around">
-              <!-- Example book image-->
+            <!-- <div class="row justify-content-around">
+              Example book image
               <div class="col-12 col-sm-12 col-md-5 col-lg-5 mb-2">
                 <img
                   src=""
@@ -176,24 +177,55 @@
                   class="img-fluid w-100 rounded"
                   id="book-img"
                 />
-              </div>
+              </div> -->
               <!-- About Book -->
-              <div class="col-12 col-sm-12 col-md-12 col-lg-7">
+              <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-7">
                 <h3 class="h3" id="book-name"></h3>
                 <p id="author-name"></p>
                 <p id="introduction"></p>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
+
+      <div class="container height-vh mt-5 pt-5 pl-0 books-container">
+        <div class="row">
+          <div class="col-12 books-col">
+            <div id="books"></div>
+  
+          </div>
+  
+        </div>
+      </div>
       <!-- Main-container -->
     </main>
-    <div class="container height-vh mt-5 pt-5">
-      <div class="row justify-content-between">
-        <div class="col-12 col-sm-12 col-md-4 p-4" id="books"></div>
+    
+
+     <!--READ MORE-->
+
+     <main class="my-5 pt-5 text-main d-none read-more-section">
+      <div class="container height-vh mt-5 pt-5">
+          <div class="row justify-content-around">
+              <div class="col-sm-12 col-md-5">
+                  <button class="btn back-btn" style="color: #fff; background-color: var(--mainColorOrange)" id="back-to-previous-ection">
+            ← back
+          </button>
+                  <div class="mt-5">
+                      <span class="badge badge-primary" id="public-year"></span>
+                  </div>
+                  <h3 class="h3" id="book-name"></h3>
+                  <p id="author-name"></p>
+                  <p id="introduction"></p>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                  <img src="" alt="book" class="img-fluid d-block ml-auto book-img rounded" style="height: 661px" />
+              </div>
+          </div>
       </div>
-    </div>
+
+      <!-- READ MORE SECTION END -->
+  </main>
 
     <footer class="row m-0">
       <div class="col-md-12">

@@ -64,21 +64,17 @@ let clearAllBook = function(emptyDiv, bookType) {
                         breakpoint: 800,
                         settings: {
                             slidesToShow: 2,
-                            slidesToScroll: 1
+                            slidesToScroll: 1,
                         },
 
                         breakpoint: 600,
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
-                            fade: true,
-
-                        }
+                        },
                     },
                 ],
             });
-
-
         });
     });
 };
@@ -120,23 +116,23 @@ let hideCategories = function() {
 
 $("#horror").on("click", function() {
     hideCategories();
-    $("#horror-slick").removeClass("d-none")
+    $("#horror-slick").removeClass("d-none");
 });
 
 $("#drama").on("click", function() {
     hideCategories();
-    $("#drama-slick").removeClass("d-none")
+    $("#drama-slick").removeClass("d-none");
 });
 
 $("#thriller").on("click", function() {
     hideCategories();
-    $("#thriller-slick").removeClass("d-none")
+    $("#thriller-slick").removeClass("d-none");
 });
 
 $("#motivational").on("click", function() {
     hideCategories();
-    $("#motivational-slick").removeClass("d-none")
-})
+    $("#motivational-slick").removeClass("d-none");
+});
 
 $("#crime").on("click", function() {
     hideCategories();
@@ -145,8 +141,8 @@ $("#crime").on("click", function() {
 
 $("#tragedy").on("click", function() {
     hideCategories();
-    $("#tragedy-slick").removeClass("d-none")
-})
+    $("#tragedy-slick").removeClass("d-none");
+});
 
 $("#detective").on("click", function() {
     hideCategories();

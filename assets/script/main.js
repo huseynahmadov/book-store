@@ -47,8 +47,6 @@ join.on("click", function(e) {
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            console.log("user logged in:", userCredential.user);
-
             localStorage.setItem("user", JSON.stringify(userCredential));
 
             document.querySelector(".login-container").classList.add("d-none");
@@ -225,7 +223,6 @@ onValue(aboutStore, (snapshot) => {
 
 
 */
-console.log($("bf-public-year").val())
 $("#bf-add-btn").on("click", function(e) {
     let bookName = $("#bf-book-name").val();
     let authorName = $("#bf-author-name").val();

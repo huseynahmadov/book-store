@@ -1,50 +1,124 @@
-var dataBook = {};
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import {
+    getDatabase,
+    ref,
+    onValue,
+} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
-var interval;
+const firebaseApp = initializeApp({
+    apiKey: "AIzaSyAJ-eqplSjwcTbbHbewQzlUe9Y8otdbYto",
+    authDomain: "book-store-69694.firebaseapp.com",
+    projectId: "book-store-69694",
+    storageBucket: "book-store-69694.appspot.com",
+    messagingSenderId: "434964076450",
+    appId: "1:434964076450:web:40c86964585bb16b8384fb",
+});
+
+// var dataBook = {};
+
+const db = getDatabase();
+const getPath = ref(db, "newBooks/");
+let value = $("#title").val();
+
+let interval;
 
 $("#title").on("input", function() {
-    var value = $(this).val();
-
     clearInterval(interval);
 
-    interval = setTimeout(() => {
-        $.ajax({
-            crossDomain: true,
-            url: "https://goodreads-books.p.rapidapi.com/search",
-            method: "GET",
-            headers: {
-                "x-rapidapi-host": "goodreads-books.p.rapidapi.com",
-                "x-rapidapi-key": "9d9588302emsh58804fa5a30d4d9p1b947ajsn659ea6ae2269",
-            },
-            data: {
-                q: value,
-                page: 1,
-            },
-        }).done(function(response) {
-            $("#title-choices").empty();
-            for (let book of response) {
-                dataBook[book.title] = book;
+    interval = setTimeout(function() {
+        onValue(getPath, (snapshot) => {
+            let data = snapshot.val();
 
-                $("#title-choices").append(
-                    '<option value="' + book.title + '">' + book.title + "</option>"
-                );
+            $("#title-choices").empty();
+
+            for (let book in data) {
+                let obj = data[book];
+
+                $("#title-choices").append(`
+        <option>${obj.bookName}</option>
+        `);
             }
         });
-    }, 500);
+    }, 700);
 });
 
-$(document).on("click", "#searchBook", function() {
-    //
-    var value = $("#title").val();
-    var result = dataBook[value];
-    if (!value || result === undefined) {
-        $("#display-alert").removeClass("d-none");
-        return;
+$("#searchBook").on("click", function() {
+    searchBook();
+});
+
+$(document).keypress(function(e) {
+    if (e.keyCode == "13" && $(".form-control").is(":focus")) {
+        searchBook();
     }
-
-    $("#display-alert").addClass("d-none");
-    $("#book-img").attr("src", result.smallImageURL);
-    $("#book-name").text(result.title);
-    $("#author-name").text(result.author);
-    //   Create div
 });
+
+const searchBook = function() {
+    let value = $("#title").val();
+    onValue(getPath, (snapshot) => {
+        let data = snapshot.val();
+
+        $("#title-choices").empty();
+        $("#books").empty();
+
+        for (let book in data) {
+            let obj = data[book];
+            if (!value || obj === undefined) {
+                $("#display-alert").removeClass("d-none");
+                return;
+            } else if (obj.bookName.toLowerCase().includes(value.toLowerCase())) {
+                $("#display-alert").addClass("d-none");
+
+                $("#books").append(`
+        <div class="card rounded" >
+          <img src="${obj.imageUrl}"  class="card-img-top img-fluid rounded" alt="${obj.bookName}" >
+          <div class="card-body text-center rounded" >
+            <p class="card-title">${obj.bookName}</p>
+            <p class="card-text">${obj.authorName}.</p>
+            <a href="#" class="btn btn-primary read-more-btn" data-name="${obj.bookName}">Read more</a>
+          </div>
+        </div>
+        `);
+            }
+        }
+    });
+};
+
+$(document).on("click", ".read-more-btn", function() {
+    $(".books-section").addClass("d-none");
+    $(".read-more-section").removeClass("d-none");
+
+    const readMore = ref(db, "newBooks/");
+    onValue(readMore, (snapshot) => {
+        const allInfos = snapshot.val();
+        for (let result in allInfos) {
+            let infos = allInfos[result];
+            if ($(this).data("name") === infos.bookName) {
+                $("#book-name").text(infos.bookName);
+                $("#author-name").text(infos.authorName);
+                $(".book-img").attr("src", infos.imageUrl);
+                $("#public-year").text(infos.publicYear);
+                $("#introduction").text(infos.description);
+            }
+        }
+    });
+});
+
+$(".back-btn").on("click", function() {
+    $(".books-section").removeClass("d-none");
+    $(".read-more-section").addClass("d-none");
+});
+
+
+// obj.bookName == value
+// $("#display-alert").addClass("d-none");
+// $("#book-img").attr("src", obj.imageUrl);
+// $("#book-name").text(obj.bookName);
+// $("#author-name").text(obj.authorName);
+
+// {
+//   /* <img src="${obj.imageUrl} /">
+// <div>${obj.bookName}</div>
+// <div>${obj.authorName}</div>
+// <button class="btn btn-primary">Read more</button> */
+// }
+//////////////////
