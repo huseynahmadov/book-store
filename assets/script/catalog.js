@@ -180,5 +180,5 @@ $(document).on("click", ".read-more", function() {
 });
 
 $(".back-btn").on("click", function() {
-    window.location = "/catalog.html";
+    window.location = "./catalog.html";
 });
