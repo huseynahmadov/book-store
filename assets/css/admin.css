@@ -213,6 +213,10 @@ Sidebar menu
   color: #f4fbff;
 }
 
+.hamburger a {
+  cursor: pointer;
+}
+
 .wrapper .section .top_navbar .hamburger a:hover {
   color: #f8e1e4 !important;
 }
