@@ -321,4 +321,7 @@ Catalog section
     .type-list {
         margin-left: 90%;
     }
+    #all-categories {
+        margin-left: 12% !important;
+    }
 }

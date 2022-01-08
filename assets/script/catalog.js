@@ -37,6 +37,7 @@ let clearAllBook = function (emptyDiv, bookType) {
         $(emptyDiv).append(newBook);
       }
     }
+
     $(document).ready(function () {
       $(emptyDiv).slick({
         infinite: true,
@@ -45,7 +46,6 @@ let clearAllBook = function (emptyDiv, bookType) {
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: true,
-
         responsive: [
           {
             breakpoint: 1200,
@@ -181,5 +181,6 @@ $(document).on("click", ".read-more", function () {
 });
 
 $(".back-btn").on("click", function () {
-  window.location = "/catalog.html";
+  $(".catalog-section").removeClass("d-none");
+  $(".read-more-section").addClass("d-none");
 });
