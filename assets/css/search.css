@@ -1,103 +1,109 @@
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0.1;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 :root {
-    --mainColorOrange: #e16a00;
-    --mainColorHover: #e97c1d;
+  --mainColorOrange: #e16a00;
+  --mainColorHover: #e97c1d;
 }
 
 #books {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 960px;
+  margin: 0 auto;
+  gap: 36px;
 }
 
 .card {
-    cursor: pointer;
-    padding: 0px;
-    width: 20%;
-    padding: 2px;
-    margin-right: 55px;
-    margin-bottom: 20px;
+  cursor: pointer;
+  padding: 0px;
+  width: 30%;
+  margin-bottom: 20px;
 }
 
 .card img {
-    width: 100%;
-    height: 100%;
-    border: 4px #fff solid;
-    border-radius: 2px;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: 4px #fff solid;
+  border-radius: 2px;
+  border: none;
 }
 
 .card-body {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    transition: opacity 0.2s ease-in;
-    opacity: 0;
-    color: #fff;
-    animation: 1s ease;
-}
-
-#books {
-    padding-left: 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transition: opacity 0.2s ease-in;
+  opacity: 0;
+  color: #fff;
+  animation: 1s ease;
 }
 
 .read-more-btn {
-    background-color: var(--mainColorOrange);
+  background-color: var(--mainColorOrange);
 }
 
 .read-more-btn:hover {
-    background-color: var(--mainColorHover);
+  background-color: var(--mainColorHover);
 }
 
 .card:hover .card-body {
-    animation: fadeInAnimation ease 0.8s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  animation: fadeInAnimation ease 0.8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .form-control:focus {
-    box-shadow: none;
-    border-color: var(--mainColorHover);
+  box-shadow: none;
+  border-color: var(--mainColorHover);
 }
-
 
 /* Remove Datalist Dropdown Arrow  */
 
 input::-webkit-calendar-picker-indicator {
-    opacity: 0;
+  opacity: 0;
 }
 
-@media screen and (max-width: 1024px) {
-    .card:hover .card-body {
-        font-size: 80%;
-    }
+@media screen and (max-width: 992px) {
+  .card {
+    width: 45%;
+  }
+  #books {
+    gap: 55px;
+  }
+  .card:hover .card-body {
+    font-size: 80%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .card {
-        width: 160px;
-    }
-    .card:hover .card-body {
-        font-size: 90%;
-    }
+  #books {
+    gap: 40px;
+  }
+  .card {
+    width: 45%;
+  }
+  .card:hover .card-body {
+    font-size: 90%;
+  }
 }
 
 @media screen and (max-width: 576px) {
-    .card {
-        width: 300px;
-    }
+  .card {
+    width: 100%;
+  }
 }

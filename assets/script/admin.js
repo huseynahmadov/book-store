@@ -30,7 +30,7 @@ $("#admin-search").on("input", function () {
       method: "GET",
       headers: {
         "x-rapidapi-host": "goodreads-books.p.rapidapi.com",
-        "x-rapidapi-key": "9d9588302emsh58804fa5a30d4d9p1b947ajsn659ea6ae2269",
+        "x-rapidapi-key": "41d19b1fd7msh2cbbbe3db425ce7p11f50djsn3cee8ab6c3b9",
       },
       data: {
         q: value,

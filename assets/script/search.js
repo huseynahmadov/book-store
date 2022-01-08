@@ -1,17 +1,17 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import {
-    getDatabase,
-    ref,
-    onValue,
+  getDatabase,
+  ref,
+  onValue,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
 const firebaseApp = initializeApp({
-    apiKey: "AIzaSyAJ-eqplSjwcTbbHbewQzlUe9Y8otdbYto",
-    authDomain: "book-store-69694.firebaseapp.com",
-    projectId: "book-store-69694",
-    storageBucket: "book-store-69694.appspot.com",
-    messagingSenderId: "434964076450",
-    appId: "1:434964076450:web:40c86964585bb16b8384fb",
+  apiKey: "AIzaSyAJ-eqplSjwcTbbHbewQzlUe9Y8otdbYto",
+  authDomain: "book-store-69694.firebaseapp.com",
+  projectId: "book-store-69694",
+  storageBucket: "book-store-69694.appspot.com",
+  messagingSenderId: "434964076450",
+  appId: "1:434964076450:web:40c86964585bb16b8384fb",
 });
 
 // var dataBook = {};
@@ -22,92 +22,91 @@ let value = $("#title").val();
 
 let interval;
 
-$("#title").on("input", function() {
-    clearInterval(interval);
+$("#title").on("input", function () {
+  clearInterval(interval);
 
-    interval = setTimeout(function() {
-        onValue(getPath, (snapshot) => {
-            let data = snapshot.val();
+  interval = setTimeout(function () {
+    onValue(getPath, (snapshot) => {
+      let data = snapshot.val();
 
-            $("#title-choices").empty();
+      $("#title-choices").empty();
 
-            for (let book in data) {
-                let obj = data[book];
+      for (let book in data) {
+        let obj = data[book];
 
-                $("#title-choices").append(`
+        $("#title-choices").append(`
         <option>${obj.bookName}</option>
         `);
-            }
-        });
-    }, 700);
-});
-
-$("#searchBook").on("click", function() {
-    searchBook();
-});
-
-$(document).keypress(function(e) {
-    if (e.keyCode == "13" && $(".form-control").is(":focus")) {
-        searchBook();
-    }
-});
-
-const searchBook = function() {
-    let value = $("#title").val();
-    onValue(getPath, (snapshot) => {
-        let data = snapshot.val();
-
-        $("#title-choices").empty();
-        $("#books").empty();
-
-        for (let book in data) {
-            let obj = data[book];
-            if (!value || obj === undefined) {
-                $("#display-alert").removeClass("d-none");
-                return;
-            } else if (obj.bookName.toLowerCase().includes(value.toLowerCase())) {
-                $("#display-alert").addClass("d-none");
-
-                $("#books").append(`
-        <div class="card rounded" >
-          <img src="${obj.imageUrl}"  class="card-img-top img-fluid rounded" alt="${obj.bookName}" >
-          <div class="card-body text-center rounded" >
-            <p class="card-title">${obj.bookName}</p>
-            <p class="card-text">${obj.authorName}.</p>
-            <a href="#" class="btn btn-primary read-more-btn" data-name="${obj.bookName}">Read more</a>
-          </div>
-        </div>
-        `);
-            }
-        }
+      }
     });
+  }, 700);
+});
+
+$("#searchBook").on("click", function () {
+  searchBook();
+});
+
+$(document).keypress(function (e) {
+  if (e.keyCode == "13" && $(".form-control").is(":focus")) {
+    searchBook();
+  }
+});
+
+const searchBook = function () {
+  let value = $("#title").val();
+  onValue(getPath, (snapshot) => {
+    let data = snapshot.val();
+
+    $("#title-choices").empty();
+    $("#books").empty();
+
+    for (let book in data) {
+      let obj = data[book];
+      if (!value || obj === undefined) {
+        $("#display-alert").removeClass("d-none");
+        return;
+      } else if (obj.bookName.toLowerCase().includes(value.toLowerCase())) {
+        $("#display-alert").addClass("d-none");
+
+        $("#books").append(`
+                <div class="card rounded" >
+                    <img src="${obj.imageUrl}"  class="card-img-top img-fluid rounded" alt="${obj.bookName}" >
+                    <div class="card-body text-center rounded" >
+                        <p class="card-title">${obj.bookName}</p>
+                        <p class="card-text">${obj.authorName}.</p>
+                        <a href="#" class="btn btn-primary read-more-btn" data-name="${obj.bookName}">Read more</a>
+                    </div>
+                </div>
+        `);
+      }
+    }
+  });
 };
 
-$(document).on("click", ".read-more-btn", function() {
-    $(".books-section").addClass("d-none");
-    $(".read-more-section").removeClass("d-none");
+$(document).on("click", ".read-more-btn", function () {
+  $(".books-section").addClass("d-none");
+  $(".read-more-section").removeClass("d-none");
 
-    const readMore = ref(db, "newBooks/");
-    onValue(readMore, (snapshot) => {
-        const allInfos = snapshot.val();
-        for (let result in allInfos) {
-            let infos = allInfos[result];
-            if ($(this).data("name") === infos.bookName) {
-                $("#book-name").text(infos.bookName);
-                $("#author-name").text(infos.authorName);
-                $(".book-img").attr("src", infos.imageUrl);
-                $("#public-year").text(infos.publicYear);
-                $("#introduction").text(infos.description);
-            }
-        }
-    });
+  const readMore = ref(db, "newBooks/");
+  onValue(readMore, (snapshot) => {
+    const allInfos = snapshot.val();
+    for (let result in allInfos) {
+      let infos = allInfos[result];
+      if ($(this).data("name") === infos.bookName) {
+        $("#book-name").text(infos.bookName);
+        $("#author-name").text(infos.authorName);
+        $(".book-img").attr("src", infos.imageUrl);
+        $("#public-year").text(infos.publicYear);
+        $("#introduction").text(infos.description);
+      }
+    }
+  });
 });
 
-$(".back-btn").on("click", function() {
-    $(".books-section").removeClass("d-none");
-    $(".read-more-section").addClass("d-none");
+$(".back-btn").on("click", function () {
+  $(".books-section").removeClass("d-none");
+  $(".read-more-section").addClass("d-none");
 });
-
 
 // obj.bookName == value
 // $("#display-alert").addClass("d-none");
